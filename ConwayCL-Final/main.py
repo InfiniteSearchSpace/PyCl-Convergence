@@ -33,7 +33,7 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(10000)
+		self.ar_ySize = np.int32(36)
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
@@ -71,7 +71,7 @@ if __name__ == "__main__":
 	example.seed()	
 
 	#Diagnostics
-	iterations = 5
+	iterations = 5000
 	total_cells = iterations*example.ar_ySize*example.ar_ySize
 	print "task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
 
@@ -84,9 +84,10 @@ if __name__ == "__main__":
 	#Results
 	print "GPU time:", total_cells, "cells in", unicode(time2-time1), "sec"
 	print "Cells per Second:", (total_cells/(time2-time1))
-
-	#print "Begin CPU Render"
-	#example.render()
+	
+	# WARNING: SLOW
+	print "Begin CPU Render"
+	example.render()
 
 
 
