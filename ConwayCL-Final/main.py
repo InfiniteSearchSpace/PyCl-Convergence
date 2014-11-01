@@ -1,9 +1,9 @@
 import pyopencl as cl
-import numpy
+import numpy as np
 import random as r
 import datetime as date
 
-numpy.set_printoptions(threshold=numpy.nan)
+np.set_printoptions(threshold=np.nan)
 
 #Averages ~250.000,000 CGoL cell updates a second, 1GB NVIDIA 560ti
 # x*y*iterations 	= total			= gpu time	= cells/sec
@@ -32,9 +32,9 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = numpy.int32(36)
-		self.a = numpy.ones((self.ar_ySize,self.ar_ySize), dtype=numpy.int32)
-		self.c = numpy.ones((self.ar_ySize,self.ar_ySize), dtype=numpy.int32)
+		self.ar_ySize = np.int32(36)
+		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
+		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
 		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
@@ -51,11 +51,8 @@ class CL:
 
 	#Run Kernal, create buffer, fill buffer
 	def seed(self):
-		self.c = numpy.ones((self.ar_ySize,self.ar_ySize), dtype=numpy.int32)
+		self.c = np.int32(np.random.randint(2, size=(self.ar_ySize, self.ar_ySize)))
 		self.a = self.c
-		for i in range(self.ar_ySize):
-			for j in range(self.ar_ySize):
-				self.c[i][j] = r.randint(0,1)
 		#Refresh buffers
 		mf = cl.mem_flags
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
@@ -72,13 +69,14 @@ if __name__ == "__main__":
 
 	print "Begin CPU Seed:", date.datetime.now()
 	example.seed()	
-	print "Begin GPU Loop:", date.datetime.now()
 
+	print "Begin GPU Loop:", date.datetime.now()
 	for i in range(5000):
 		example.execute()
 
 	print "Begin CPU Render:", date.datetime.now()
 	example.render()
+
 	print "Done", date.datetime.now()
 
 
