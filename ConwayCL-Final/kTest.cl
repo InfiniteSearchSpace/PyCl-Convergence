@@ -1,6 +1,5 @@
 __kernel void Conway(const int ySize, __global int* a, __global int* c)
 {
-
     unsigned int i = get_global_id(0);
 	unsigned int j = get_global_id(1);
 	unsigned int my_id = i + ySize*j;
@@ -22,6 +21,5 @@ __kernel void Conway(const int ySize, __global int* a, __global int* c)
 			c[my_id]=0;
 		}
 	}
-
 }
 

@@ -31,6 +31,7 @@ class CL:
 		mf = cl.mem_flags
 		
 		#initialize client side (CPU) arrays
+		#Use ar_ySize to increase the worldspace
 		self.ar_ySize = numpy.int32(36)
 		self.a = numpy.ones((self.ar_ySize,self.ar_ySize), dtype=numpy.int32)
 		self.c = numpy.ones((self.ar_ySize,self.ar_ySize), dtype=numpy.int32)
@@ -72,8 +73,10 @@ if __name__ == "__main__":
 	print "Begin CPU Seed:", date.datetime.now()
 	example.seed()	
 	print "Begin GPU Loop:", date.datetime.now()
+
 	for i in range(5000):
 		example.execute()
+
 	print "Begin CPU Render:", date.datetime.now()
 	example.render()
 	print "Done", date.datetime.now()
