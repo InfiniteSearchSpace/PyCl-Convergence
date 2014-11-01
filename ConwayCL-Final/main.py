@@ -10,6 +10,7 @@ class CL:
 	def __init__(self):
 		self.ctx = cl.create_some_context()
 		self.queue = cl.CommandQueue(self.ctx)
+		self.tick = False
 
 	#Load kernal file and load as internal program
 	def loadProgram(self, filename):
@@ -35,13 +36,12 @@ class CL:
 
 	#Run Kernal, create buffer, fill buffer
 	def execute(self):
-		self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
-		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.c).wait()
-		self.a = self.c;
-		#Refresh buffers
-		mf = cl.mem_flags
-		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
-		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
+		if not self.tick:
+			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
+		else:
+			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.dest_buf, self.a_buf)
+		
+		self.tick = not self.tick
 
 	#Run Kernal, create buffer, fill buffer
 	def seed(self):
@@ -55,7 +55,10 @@ class CL:
 
 	#Print the output array
 	def render(self):
-		print self.a
+		if self.tick:
+			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
+		else:
+			cl.enqueue_read_buffer(self.queue, self.a_buf, self.a).wait()
 	
 if __name__ == "__main__":
 	example = CL()
