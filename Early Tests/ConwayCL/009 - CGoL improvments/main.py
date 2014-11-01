@@ -2,7 +2,6 @@ import pyopencl as cl
 import numpy as np
 import random as r
 import datetime as date
-import time 
 
 np.set_printoptions(threshold=np.nan)
 
@@ -33,7 +32,7 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(10000)
+		self.ar_ySize = np.int32(5000)
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
@@ -52,7 +51,6 @@ class CL:
 
 	#Run Kernal, create buffer, fill buffer
 	def seed(self):
-		np.random.seed(r.randint(0,100000))
 		self.c = np.int32(np.random.randint(2, size=(self.ar_ySize, self.ar_ySize)))
 		self.a = self.c
 		#Refresh buffers
@@ -68,25 +66,18 @@ if __name__ == "__main__":
 	example = CL()
 	example.loadProgram("kTest.cl")
 	example.popCorn()
+
+	print "Begin CPU Seed:", date.datetime.now()
 	example.seed()	
 
-	#Diagnostics
-	iterations = 5
-	total_cells = iterations*example.ar_ySize*example.ar_ySize
-	print "task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
-
-	#Run the loop
-	time1=time.clock()
-	for i in range(iterations):
+	print "Begin GPU Loop:", date.datetime.now()
+	for i in range(100):
 		example.execute()
-	time2=time.clock()
-	
-	#Results
-	print "GPU time:", total_cells, "cells in", unicode(time2-time1), "sec"
-	print "Cells per Second:", (total_cells/(time2-time1))
 
-	#print "Begin CPU Render"
-	#example.render()
+	print "Begin CPU Render:", date.datetime.now()
+	example.render()
+
+	print "Done", date.datetime.now()
 
 
 

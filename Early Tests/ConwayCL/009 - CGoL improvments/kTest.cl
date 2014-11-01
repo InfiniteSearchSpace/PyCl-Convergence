@@ -18,9 +18,9 @@ __kernel void Conway(const int ySize, __global int* a, __global int* c)
 
 	if(count != 2){
 		if(count==3){
-			c[my_id]=1;
+			//c[my_id]=1;
 		}else{
-			c[my_id]=0;
+			//c[my_id]=0;
 		}
 	}
 
