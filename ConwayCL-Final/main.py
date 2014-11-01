@@ -36,12 +36,13 @@ class CL:
 
 	#Run Kernal, create buffer, fill buffer
 	def execute(self):
-		if not self.tick:
-			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
-		else:
-			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.dest_buf, self.a_buf)
-		
-		self.tick = not self.tick
+		self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
+		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.c).wait()
+		self.a = self.c;
+		#Refresh buffers
+		mf = cl.mem_flags
+		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
+		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
 
 	#Run Kernal, create buffer, fill buffer
 	def seed(self):
@@ -55,10 +56,7 @@ class CL:
 
 	#Print the output array
 	def render(self):
-		if self.tick:
-			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
-		else:
-			cl.enqueue_read_buffer(self.queue, self.a_buf, self.a).wait()
+		print self.a
 	
 if __name__ == "__main__":
 	example = CL()
@@ -67,7 +65,7 @@ if __name__ == "__main__":
 	example.seed()	
 
 	#Diagnostics
-	iterations = 5000
+	iterations = 10000
 	total_cells = iterations*example.ar_ySize*example.ar_ySize
 	print "task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
 
