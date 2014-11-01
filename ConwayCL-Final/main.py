@@ -6,13 +6,6 @@ import time
 
 np.set_printoptions(threshold=np.nan)
 
-#Averages ~250.000,000 CGoL cell updates a second, 1GB NVIDIA 560ti
-# x*y*iterations 	= total			= gpu time	= cells/sec
-# 36*36*100000 		= 129600000 	= 27s  		= 4,800,000
-# 1000*1000*1000 	= 1000000000 	= 3.82s		= 261,780,104
-# 1000*1000*5000	= 5000000000 	= 18.82		= 265,674,814
-
-
 class CL:
 	def __init__(self):
 		self.ctx = cl.create_some_context()
