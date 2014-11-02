@@ -10,7 +10,7 @@ class CL:
 	def __init__(self):
 		self.ctx = cl.create_some_context()
 		self.queue = cl.CommandQueue(self.ctx)
-		self.tickState = False
+		self.tick = False
 
 	#Load kernal file and load as internal program
 	def loadProgram(self, filename):
@@ -27,7 +27,7 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(1000)  #560ti Max: 8000^2 * 5000
+		self.ar_ySize = np.int32(36)
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
@@ -36,15 +36,7 @@ class CL:
 
 	#Run Kernal, create buffer, fill buffer
 	def execute(self):
-		if self.tickState == False:
-			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
-		else:
-			self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.dest_buf, self.a_buf)
-		
-		self.tickState = not self.tickState
-
-	#Enqueue read buffer, get it to self.a
-	def getData(self):
+		self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
 		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
 		
 		#Refresh buffers
@@ -54,7 +46,7 @@ class CL:
 	#Seed, fill buffer
 	def seed(self):
 		np.random.seed(r.randint(0,100000))
-		self.a = np.int32(np.random.randint(6, size=(self.ar_ySize, self.ar_ySize)))
+		self.a = np.int32(np.random.randint(2, size=(self.ar_ySize, self.ar_ySize)))
 
 		#Refresh buffers
 		mf = cl.mem_flags
@@ -63,10 +55,6 @@ class CL:
 	#Print the output array
 	def render(self):
 		print self.a
-
-	#Write File Render
-	def fileRender(self):
-		np.savetxt('OUT.txt', self.a, delimiter=' ', fmt="%s")
 	
 if __name__ == "__main__":
 	example = CL()
@@ -75,9 +63,9 @@ if __name__ == "__main__":
 	example.seed()	
 
 	#Diagnostics
-	iterations = 500 #This number gets doubled
-	total_cells = iterations*2 * example.ar_ySize*example.ar_ySize
-	print " > Task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
+	iterations = 1000
+	total_cells = iterations*example.ar_ySize*example.ar_ySize
+	print "task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
 
 	#Run the loop
 	time1=time.clock()
@@ -86,24 +74,15 @@ if __name__ == "__main__":
 	time2=time.clock()
 	
 	#Results
-	print " > GPU time:", total_cells, "cells in", unicode(time2-time1), "sec"
-	print " > Cells per Second:", "{:,}".format((total_cells/(time2-time1)))
+	print "GPU time:", total_cells, "cells in", unicode(time2-time1), "sec"
+	print "Cells per Second:", (total_cells/(time2-time1))
 	
-	#actually fetch the results
-	example.getData()
-
-	#Write the final output to the terminal output
+	# WARNING: SLOW
 	if example.ar_ySize <= 100:
-		print " > Begin CPU Render"
+		print "Begin CPU Render"
 		example.render()
 	else:
-		print " > Array size must be <= 100 to attempt a terminal render"
-	
-	#Write the final output to a file
-	if example.ar_ySize <= 1500:
-		print " > Begin FileRender"
-		example.fileRender()
-	else:
-		print " > Array size must be <= 1500 to attempt a FileWrite render"
+		print "Array size must be <= 100 to attempt a terminal render"
 
-	print " > DONE!"
+
+
