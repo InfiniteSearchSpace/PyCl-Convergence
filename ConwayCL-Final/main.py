@@ -27,7 +27,7 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(36)
+		self.ar_ySize = np.int32(1000)
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
@@ -37,22 +37,20 @@ class CL:
 	#Run Kernal, create buffer, fill buffer
 	def execute(self):
 		self.program.Conway(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
-		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.c).wait()
-		self.a = self.c;
+		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
+		
 		#Refresh buffers
 		mf = cl.mem_flags
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
-		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
 
-	#Run Kernal, create buffer, fill buffer
+	#Seed, fill buffer
 	def seed(self):
 		np.random.seed(r.randint(0,100000))
-		self.c = np.int32(np.random.randint(2, size=(self.ar_ySize, self.ar_ySize)))
-		self.a = self.c
+		self.a = np.int32(np.random.randint(2, size=(self.ar_ySize, self.ar_ySize)))
+
 		#Refresh buffers
 		mf = cl.mem_flags
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
-		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
 
 	#Print the output array
 	def render(self):
@@ -65,7 +63,7 @@ if __name__ == "__main__":
 	example.seed()	
 
 	#Diagnostics
-	iterations = 10000
+	iterations = 1000
 	total_cells = iterations*example.ar_ySize*example.ar_ySize
 	print "task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
 
@@ -80,8 +78,11 @@ if __name__ == "__main__":
 	print "Cells per Second:", (total_cells/(time2-time1))
 	
 	# WARNING: SLOW
-	print "Begin CPU Render"
-	example.render()
+	if example.ar_ySize <= 100:
+		print "Begin CPU Render"
+		example.render()
+	else:
+		print "Array size must be <= 100 to attempt a terminal render"
 
 
 
