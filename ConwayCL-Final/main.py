@@ -77,7 +77,7 @@ if __name__ == "__main__":
 	#Diagnostics
 	iterations = 500 #This number gets doubled
 	total_cells = iterations*2 * example.ar_ySize*example.ar_ySize
-	print " > Task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations, "iterations,", total_cells, "total cells"
+	print " > Task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations*2, "iterations,", total_cells, "total cells"
 
 	#Run the loop
 	time1=time.clock()
