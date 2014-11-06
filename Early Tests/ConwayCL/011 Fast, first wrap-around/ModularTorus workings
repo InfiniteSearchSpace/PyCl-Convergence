@@ -1,0 +1,119 @@
+	//Modular? Modular.
+	/*
+	   % # # #
+	   % # # #
+	   % # # #
+	   % # # #
+
+	   % # # #
+	     % # # #
+		   % # # #
+		     % # # #
+
+	   %  #  #  #  %  #  #  #  %  #  #  #  %  #  #  #
+
+	ID 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+	X  0  1  2  3  0  1  2  3  0  1  2  3  0  1  2  3
+	Y  0  0  0  0  1  1  1  1  2  2  2  2  3  3  3  3
+
+
+	X 			= my_id % row_length			= i
+	Y 			= (my_id - X) / row_length		= j
+	my_id 		= X + Y*row_length 				= unsigned int my_id = i + ySize*j;
+	totalSize 	= ySize*ySize
+
+	--------------------------------------
+	
+	% # # #    	0  1  2  3
+	% # # #		4  5  6  7
+	% # # #		8  9 10 11
+	% # # #		12 13 14 15
+
+	int xOff = -1;
+	int yOff = 1;
+	- - -
+	- o -
+	x - -
+	o@(0): 	7
+	o@(10):	13
+	o@(12):	3
+	o@(3):	6
+	o@(15):	2
+	
+
+	int xOff = 1;
+	int yOff = -1;
+	- - x
+	- o -
+	- - -
+	o@(0):	13
+	o@(10):	7
+	o@(12):	9
+	o@(3):	12
+	o@(15):	8
+	
+
+	int xOff = -2;
+	int yOff = 1;
+	- - - - -
+	- - - - -
+	- - o - -
+	x - - - -
+	- - - - -
+	o@(0):	6
+	o@(3):	5
+	o@(10):	12
+	o@(12):	2
+	o@(15):	1
+
+
+	a[ 	my_id 
+		+ (xOff % ySize) 
+		+ ((ySize * yOff) % totalSize) ]
+
+	--------------------------------------
+
+import numpy as np
+xoff = -2
+yoff = 1
+ysize = 4
+tsize = ysize*ysize
+id = 0
+ar = np.zeros((ysize,ysize), dtype=np.int32)
+
+for i in range(ysize):
+	for j in range(ysize):
+		ar[j][i] = i+j*ysize
+
+print ar
+
+for i in range(ysize):
+	for j in range(ysize):
+		ar[j][i] = ((ar[j][i] + xoff%ysize) %ysize + j*ysize + ysize*yoff) %tsize
+
+print ar
+
+
+/*******
+ar[i][j] + (xoff%ysize) + ((ysize*yoff) % tsize)
+( ar[i][j] + (xoff%ysize) + (ysize*yoff) ) % tsize
+(ar[i][j] + (xoff%ysize) + ((ysize*yoff) % tsize))%tsize
+(ar[i][j] + (xoff%ysize) + ((ysize*yoff) % ysize))%tsize
+(ar[j][i] + (xoff%ysize))%tsize
+(ar[j][i] + (xoff%ysize) + (ysize*yoff))%tsize
+*******/
+
+#First working for x offset
+ar[j][i] = (((ar[j][i] + (xoff%ysize) )%ysize) + (j*ysize)) 
+
+#y offset
+ar[j][i] = (ar[j][i] + (ysize*yoff))%tsize
+
+#WINRAR! WINRAR! X & Y combined. Now to slow down GPU with mod%lar functions
+ar[j][i] = ((((ar[j][i] + (xoff%ysize) )%ysize) + (j*ysize)) + (ysize*yoff))%tsize
+
+#Without funky brackets
+ar[j][i] = ((ar[j][i] + xoff%ysize) %ysize + j*ysize + ysize*yoff) %tsize
+	--------------------------------------
+
+	*/

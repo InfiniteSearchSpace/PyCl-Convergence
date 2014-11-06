@@ -27,7 +27,7 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(1500)  #560ti Max: 8000^2 * 5000
+		self.ar_ySize = np.int32(1000)  #560ti Max: 8000^2 * 5000
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 	example.seed()	
 
 	#Diagnostics
-	iterations = 2500 #This number gets doubled
+	iterations = 1000 #This number gets doubled
 	total_cells = iterations*2 * example.ar_ySize*example.ar_ySize
 	print " > Task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations*2, "iterations,", total_cells, "total cells"
 
