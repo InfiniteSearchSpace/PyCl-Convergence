@@ -1,8 +1,11 @@
 import pyopencl as cl
 import numpy as np
+import scipy as sp
+from scipy import misc
 import random as r
 import datetime as date
 import time 
+from PIL import Image
 
 np.set_printoptions(threshold=np.nan)
 
@@ -27,12 +30,23 @@ class CL:
 		
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
-		self.ar_ySize = np.int32(1500)  #560ti Max: 8000^2 * 5000
+		#-------------------------------------------
+		self.ar_ySize = np.int32(270 * 2) 
+		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.c = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		#create OpenCL buffers
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
 		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
+
+	
+	##### Automata #####
+	#Conway
+	#Evolver
+	#ConwayTorus
+	#EvolverTorus
+	#WaveTorus
+	#AtomTorus
 
 	#Run Kernal, create buffer, fill buffer
 	def execute(self):
@@ -40,21 +54,35 @@ class CL:
 			self.program.ConwayTorus(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
 		else:
 			self.program.ConwayTorus(self.queue, self.a.shape, None, self.ar_ySize, self.dest_buf, self.a_buf)
-		
 		self.tickState = not self.tickState
+
+
 
 	#Enqueue read buffer, get it to self.a
 	def getData(self):
 		cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
-		
+		#print "tick:", self.tickState
 		#Refresh buffers
 		mf = cl.mem_flags
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
 
+
 	#Seed, fill buffer
-	def seed(self):
+	def seed(self, seedRand):
 		np.random.seed(r.randint(0,100000))
-		self.a = np.int32(np.random.randint(6, size=(self.ar_ySize, self.ar_ySize)))
+		seedAr = np.random.randint(seedRand, size=(self.ar_ySize, self.ar_ySize))
+		seedAr = np.where(seedAr==1, 1, 0)
+		self.a = np.int32(seedAr)
+		#Refresh buffers
+		mf = cl.mem_flags
+		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
+
+	#Seed from image
+	def loadImg(self, seedImage):
+		
+		img = np.array(Image.open(seedImage))
+		img2 = np.where(img==255, 1, 0)
+		self.a = np.int32(img2)
 
 		#Refresh buffers
 		mf = cl.mem_flags
@@ -64,29 +92,56 @@ class CL:
 	def render(self):
 		print self.a
 
-	#Write File Render
+	#Write Text File Render
 	def fileRender(self):
 		np.savetxt('OUT.txt', self.a, delimiter=' ', fmt="%s")
+
+	#Write Bitmap File Render
+	def bitRender(self, rn):
+		name = "image" + str(rn)
+		sp.misc.imsave(name + '.bmp', self.a)
 	
 if __name__ == "__main__":
 	example = CL()
 	example.loadProgram("kTest.cl")
 	example.popCorn()
-	example.seed()	
+
+	#example.seed(4)
+	example.loadImg("SEEDIMAGE.bmp")
+
+	#--------------------------------------
+
+	iterations = 1500 
+	renderEvery = 15
+
+	#--------------------------------------
 
 	#Diagnostics
-	iterations = 2500 #This number gets doubled
-	total_cells = iterations*2 * example.ar_ySize*example.ar_ySize
-	print " > Task:", example.ar_ySize, "x", example.ar_ySize, "for", iterations*2, "iterations,", total_cells, "total cells"
+	total_cells = iterations * example.ar_ySize*example.ar_ySize
+	print " > Task:", "{:,}".format(example.ar_ySize), "x", "{:,}".format(example.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
+	print " > Render every", "{:,}".format(renderEvery), "frames.", "{:,}".format(iterations/renderEvery), "total."
+
+	renderNum = 0
 
 	#Run the loop
 	time1=time.clock()
 	for i in range(iterations):
 		example.execute()
+		if i % renderEvery == 0:
+			example.getData()
+			example.bitRender(renderNum)
+			renderNum += 1
+			
+			print " > Task:", "{:,}".format(example.ar_ySize), "x", "{:,}".format(example.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
+			print " > Render every", "{:,}".format(renderEvery), "frames.", "{:,}".format(iterations/renderEvery), "total."
+			print "Imaged:", renderNum+1, "of", "{:,}".format(iterations/renderEvery) 
+			
+
+
 	time2=time.clock()
 	
 	#Results
-	print " > GPU time:", total_cells, "cells in", unicode(time2-time1), "sec"
+	print " > GPU time:", "{:,}".format(total_cells), "cells in", unicode(time2-time1), "sec"
 	print " > Cells per Second:", "{:,}".format((total_cells/(time2-time1)))
 	
 	#actually fetch the results
@@ -99,11 +154,17 @@ if __name__ == "__main__":
 	else:
 		print " > Array size must be <= 100 to attempt a terminal render"
 	
+
+	#textMaxSize = 2500
+
 	#Write the final output to a file
-	if example.ar_ySize <= 1500:
-		print " > Begin FileRender"
-		example.fileRender()
-	else:
-		print " > Array size must be <= 1500 to attempt a FileWrite render"
+	#if example.ar_ySize <= textMaxSize:
+	#	print " > Begin FileRender"
+	#	example.fileRender()
+	#else:
+	#	print " > Array size must be <=", textMaxSize, "to attempt a Text-File Write render"
+
+	print " > Begin Writing to Bitmap image"
+	example.bitRender(renderNum)
 
 	print " > DONE!"
