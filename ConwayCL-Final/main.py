@@ -29,7 +29,7 @@ class CL:
 		#initialize client side (CPU) arrays
 		#Use ar_ySize to increase the worldspace
 		#-------------------------------------------
-		self.ar_ySize = np.int32(2048)
+		self.ar_ySize = np.int32(2048*4)
 		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 	MainCL.seed(4) #Random seed
 	#MainCL.loadImg("SEEDIMAGE-Atom-1024.bmp") #Seed from image
 
-	iterations = 10000 #number of frames to calculate
+	iterations = 1000 #number of frames to calculate
 
 	renderEvery = 10 #render every x frames
 	#--------------------------------------
