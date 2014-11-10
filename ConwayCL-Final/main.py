@@ -2,6 +2,7 @@ import pyopencl as cl
 import numpy as np
 import scipy as sp
 from scipy import misc
+from scipy import ndimage
 import random as r
 import datetime as date
 import time 
@@ -30,7 +31,7 @@ class CL:
 	def initHostArrays(self):
 		#Use ar_ySize below to increase the worldspace, must be multiple of 32 it seems
 		#-------------------------------------------
-		self.ar_ySize = np.int32(512*2)
+		self.ar_ySize = np.int32(256*4)
 		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
@@ -86,24 +87,27 @@ class CL:
 		print self.a
 
 	#Write Bitmap File Render
-	def bitRender(self, rn):
-		name = "image" + str(rn)
-		sp.misc.imsave(name + '.bmp', self.a)
+	def bitRender(self, rn, zoom):
+		name = "Out/"+"image" + str(rn)
+		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(self.a, zoom, order=0))
+
 	
 if __name__ == "__main__":
 	MainCL = CL()
 	MainCL.kUtil = MainCL.loadProgram("KernelUtils.cl")
 	
 	#-- Config Box -------------------------
-	MainCL.kAutomata = MainCL.loadProgram("RuleKernels/Atom-Torus.cl")
+	MainCL.kAutomata = MainCL.loadProgram("RuleKernels/Curious.cl")
 	MainCL.initHostArrays()
 
-	MainCL.seed(7) #Random seed
-	#MainCL.loadImg("SeedImages/SEEDIMAGE-Atom-1024.bmp") #Seed from image
+	MainCL.seed(10) #Random seed
+	#MainCL.loadImg("SeedImages/SEEDIMAGE-Atom-3072.bmp") #Seed from image
 
-	iterations = 10000 #number of frames to calculate
+	iterations = 100000 #number of frames to calculate
 
 	renderEvery = 100 #render every x frames
+
+	image_magnification = 2
 	#--------------------------------------
 
 	#-----
@@ -123,7 +127,7 @@ if __name__ == "__main__":
 		MainCL.execute()
 		if i % renderEvery == 0:
 			MainCL.getData()
-			MainCL.bitRender(renderNum)
+			MainCL.bitRender(renderNum, image_magnification)
 			time2=time.clock()
 			if i != 0:
 				print "Img:", renderNum+1, "/", "{:,}".format(iterations/renderEvery), " - ", (float(renderNum+1)/float(iterations/renderEvery))*100, "%", "of", "{:,}".format(total_cells)
