@@ -8,6 +8,7 @@ import time
 from PIL import Image
 import os
 
+#Don't truncate printed arrays
 np.set_printoptions(threshold=np.nan)
 
 class CL:
@@ -16,24 +17,24 @@ class CL:
 		self.queue = cl.CommandQueue(self.ctx)
 		self.tickState = False
 
-	#Load kernal file and load as internal program
+	#Load kernel file and load as internal program
 	def loadProgram(self, filename):
 		#read in the OpenCL source file as a string
 		f = open(filename, 'r')
 		fstr = "".join(f.readlines())
 		#print fstr
 		#create the program
-		self.program = cl.Program(self.ctx, fstr).build()
+		return cl.Program(self.ctx, fstr).build()
 
+	#initialize host side (CPU) arrays
 	def initHostArrays(self):
-		#initialize client side (CPU) arrays
-		#Use ar_ySize to increase the worldspace
+		#Use ar_ySize below to increase the worldspace, must be multiple of 32 it seems
 		#-------------------------------------------
-		self.ar_ySize = np.int32(2048*4)
+		self.ar_ySize = np.int32(512*2)
 		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
-	#Create the host structures and buffers
+	#Create the cl buffers
 	def initBuffers(self):
 		mf = cl.mem_flags
 
@@ -42,58 +43,47 @@ class CL:
 		self.b_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
 		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
 
-	
-	##### Automata #####
-	#Conway
-	#Evolver
-	#ConwayTorus
-	#EvolverTorus
-	#WaveTorus
-	#AtomTorus
-	#CrystalTorus
-
-	#Run Kernal, swapping state between buffer a & b
+	#Run Kernel, swapping/transitioning cell states between buffer a & b
 	def execute(self):
 		if self.tickState == False:
-			self.program.ConwayTorus(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.b_buf)
+			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.b_buf)
 		else:
-			self.program.ConwayTorus(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.a_buf)
+			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.a_buf)
 		
 		self.tickState = not self.tickState
 
 
 
-	#Read to buffer, Read from dest buffer to self.a
+	#Read from GPU buffer to host's array (self.a)
 	def getData(self):
 		if self.tickState == False:
-			self.program.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.dest_buf)
+			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.dest_buf)
 			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
 		else:
-			self.program.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
+			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
 			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
 			
 		
 
 	#Seed, fill buffer
 	def seed(self, seedRand):
+		#select random seed for the fill
 		np.random.seed(r.randint(0,100000))
 		seedAr = np.random.randint(seedRand, size=(self.ar_ySize, self.ar_ySize))
+
+		#Limit it to 1s and 0s, then assign it
 		seedAr = np.where(seedAr==1, 1, 0)
 		self.a = np.int32(seedAr)
 
 	#Seed from image
 	def loadImg(self, seedImage):
 		img = np.array(Image.open(seedImage))
-		img2 = np.where(img==255, 1, 0)
+		img2 = np.where(img != 0, 1, 0)
 		self.a = np.int32(img2)
 
 	#Print the output array
 	def render(self):
 		print self.a
-
-	#Write Text File Render
-	def fileRender(self):
-		np.savetxt('OUT.txt', self.a, delimiter=' ', fmt="%s")
 
 	#Write Bitmap File Render
 	def bitRender(self, rn):
@@ -102,17 +92,23 @@ class CL:
 	
 if __name__ == "__main__":
 	MainCL = CL()
-	MainCL.loadProgram("kTest.cl")
+	MainCL.kUtil = MainCL.loadProgram("KernelUtils.cl")
+	
+	#-- Config Box -------------------------
+	MainCL.kAutomata = MainCL.loadProgram("RuleKernels/Atom-Torus.cl")
 	MainCL.initHostArrays()
 
-	#--------------------------------------
-	MainCL.seed(4) #Random seed
-	#MainCL.loadImg("SEEDIMAGE-Atom-1024.bmp") #Seed from image
+	MainCL.seed(7) #Random seed
+	#MainCL.loadImg("SeedImages/SEEDIMAGE-Atom-1024.bmp") #Seed from image
 
-	iterations = 1000 #number of frames to calculate
+	iterations = 10000 #number of frames to calculate
 
-	renderEvery = 10 #render every x frames
+	renderEvery = 100 #render every x frames
 	#--------------------------------------
+
+	#-----
+	# Begin main program loop	
+	#-----
 
 	MainCL.initBuffers()
 
@@ -121,28 +117,21 @@ if __name__ == "__main__":
 	renderNum = 0
 
 	#Run the loop
+	print "Running:", "{:,}".format(MainCL.ar_ySize), "x", "{:,}".format(MainCL.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
 	time1=time.clock()
 	for i in range(iterations):
 		MainCL.execute()
 		if i % renderEvery == 0:
 			MainCL.getData()
 			MainCL.bitRender(renderNum)
-			#Results			
-			#print " > Task:", "{:,}".format(MainCL.ar_ySize), "x", "{:,}".format(MainCL.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
-			#print " > Render every", "{:,}".format(renderEvery), "frames.", "{:,}".format(iterations/renderEvery), "total."
 			time2=time.clock()
-			#print " > GPU time:", unicode(time2-time1), "s.", "Estimated Completion Time:", unicode(total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
-			#print " > Cells per Second:", "{:,}".format((renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
-			#print " > Imaged:", renderNum+1, "of", "{:,}".format(iterations/renderEvery), " - ", (float(renderNum+1)/float(iterations/renderEvery))*100, "%"
-			#print "- - - - - - - - - - - - - - - - - - -"
 			if i != 0:
 				print "Img:", renderNum+1, "/", "{:,}".format(iterations/renderEvery), " - ", (float(renderNum+1)/float(iterations/renderEvery))*100, "%", "of", "{:,}".format(total_cells)
 				print "ETA:", int((total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))*(float(renderNum+1)/float(iterations/renderEvery))), "/", unicode(int(total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))), "s. Cells/Sec.", "{:,}".format(int(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
-			
 			time1 = time2
 			renderNum += 1
 
-	#Write the final output to the terminal output
+	#Write the output to the terminal (for testing)
 	if MainCL.ar_ySize <= 100:
 		print " > Begin CPU Render"
 		MainCL.render()

@@ -1,0 +1,7 @@
+# old prints storage -------------------------			
+#print " > Task:", "{:,}".format(MainCL.ar_ySize), "x", "{:,}".format(MainCL.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
+#print " > Render every", "{:,}".format(renderEvery), "frames.", "{:,}".format(iterations/renderEvery), "total."
+#print " > GPU time:", unicode(time2-time1), "s.", "Estimated Completion Time:", unicode(total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
+#print " > Cells per Second:", "{:,}".format((renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
+#print " > Imaged:", renderNum+1, "of", "{:,}".format(iterations/renderEvery), " - ", (float(renderNum+1)/float(iterations/renderEvery))*100, "%"
+#print "- - - - - - - - - - - - - - - - - - -"
