@@ -8,6 +8,8 @@ import datetime as date
 import time 
 from PIL import Image
 import os
+import tkFileDialog as tfd
+from Tkinter import Tk
 
 #Don't truncate printed arrays
 np.set_printoptions(threshold=np.nan)
@@ -29,9 +31,9 @@ class CL:
 
 	#initialize host side (CPU) arrays
 	def initHostArrays(self):
-		#Use ar_ySize below to increase the worldspace, must be multiple of 32 it seems
+		#Use ar_ySize below to increase the worldspace, should be a power of 2
 		#-------------------------------------------
-		self.ar_ySize = np.int32(256*4)
+		self.ar_ySize = np.int32(1024)
 		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
@@ -95,20 +97,55 @@ class CL:
 if __name__ == "__main__":
 	MainCL = CL()
 	MainCL.kUtil = MainCL.loadProgram("KernelUtils.cl")
-	
-	#-- Config Box -------------------------
-	MainCL.kAutomata = MainCL.loadProgram("RuleKernels/Curious.cl")
+
+	#For hiding unused GUI
+	fauxgui = Tk()
+	fauxgui.withdraw()
+
 	MainCL.initHostArrays()
 
-	MainCL.seed(10) #Random seed
-	#MainCL.loadImg("SeedImages/SEEDIMAGE-Atom-3072.bmp") #Seed from image
 
-	iterations = 100000 #number of frames to calculate
 
-	renderEvery = 100 #render every x frames
+	#Have the user select one of the kernel automata rules
+	MainCL.kAutomata = MainCL.loadProgram(tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)"))
+	usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 
-	image_magnification = 2
+	#--- Preset Configuration -------------
+		
+	seed_strength = 7
+	iterations = 1000
+	renderEvery = 10
+	image_magnification = 1
+
+	MainCL.seed(seed_strength)
 	#--------------------------------------
+	
+
+	if usePreset == "N" or usePreset == "n":
+		#Query user about seeding the initial cell configurations
+		SeedType = raw_input("  > Seed from bitmap file? (Y/N): ")
+		if SeedType != "" and SeedType != "n" and SeedType != "N":
+			#Seed from image
+			MainCL.loadImg(tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")) 
+		else:
+			#Seed Strength
+			uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
+			if uinput != "":
+				MainCL.seed(int(uinput))
+
+		#number of frames to calculate
+		uinput = raw_input("  > (Int) [" + str(iterations) + "] Enter number of frames to calculate: ") 
+		if uinput != "":
+			iterations = int(uinput)
+
+		#render every x frames
+		uinput = raw_input("  > (Int) [" + str(renderEvery) + "] Render every x frames: ")
+		if uinput != "":
+			renderEvery = int(uinput)
+
+		uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered pixels by: ")
+		if uinput != "":
+			image_magnification = int(uinput)
 
 	#-----
 	# Begin main program loop	
