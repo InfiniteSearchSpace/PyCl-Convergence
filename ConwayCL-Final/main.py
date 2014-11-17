@@ -25,15 +25,22 @@ class CL:
 		#read in the OpenCL source file as a string
 		f = open(filename, 'r')
 		fstr = "".join(f.readlines())
+		f.close()
 		#print fstr
 		#create the program
 		return cl.Program(self.ctx, fstr).build()
 
+	#Load last configuration
+	def loadConfig(self, filename):
+		#read
+		f = open(filename, 'r')
+		fstr = "".join(f.readlines())
+		return fstr
+
 	#initialize host side (CPU) arrays
-	def initHostArrays(self):
+	def initHostArrays(self, res_expo):
 		#Use ar_ySize below to increase the worldspace, should be a power of 2
-		#-------------------------------------------
-		self.ar_ySize = np.int32(1024)
+		self.ar_ySize = np.int32(2**res_expo)
 		#-------------------------------------------
 		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
@@ -93,7 +100,15 @@ class CL:
 		name = "Out/"+"image" + str(rn)
 		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(self.a, zoom, order=0))
 
-	
+
+
+
+
+
+#----------------------------------------------------------
+#-------------------- Entry Point -------------------------
+#----------------------------------------------------------
+
 if __name__ == "__main__":
 	MainCL = CL()
 	MainCL.kUtil = MainCL.loadProgram("KernelUtils.cl")
@@ -101,51 +116,107 @@ if __name__ == "__main__":
 	#For hiding unused GUI
 	fauxgui = Tk()
 	fauxgui.withdraw()
-
-	MainCL.initHostArrays()
-
-
-
-	#Have the user select one of the kernel automata rules
-	MainCL.kAutomata = MainCL.loadProgram(tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)"))
-	usePreset = raw_input("  > Use preset configuration? (Y/N): ")
-
+	
+	
 	#--- Preset Configuration -------------
-		
-	seed_strength = 7
-	iterations = 1000
-	renderEvery = 10
+
+	res_expo = 10	
+	seed_strength = 3
+	iterations = 100
+	renderEvery = 1
 	image_magnification = 1
 
-	MainCL.seed(seed_strength)
-	#--------------------------------------
+	#----------------------------------------------------------
+	#--------------USER INPUT & CONFIG-------------------------
+	#----------------------------------------------------------
+	last_config = MainCL.loadConfig("Last_Config")
+	vetoConfig = False
+
+	list = [item for item in last_config.split(',') if item.strip()]
 	
+	#replay last config?
+	uinput = raw_input("  > Replay last configuration? (Y/N): ")
+	if uinput != "" and uinput != "n" and uinput != "N":
+		#Overrite the defaults
+		res_expo = 				int(list[0])
+		ruleFName = 			list[1]
+		seedImageFile = 		list[2]
+		seed_strength = 		int(list[3])
+		iterations = 			int(list[4])
+		renderEvery = 			int(list[5])
+		image_magnification = 	int(list[6])
+		
+		vetoConfig = True
 
-	if usePreset == "N" or usePreset == "n":
-		#Query user about seeding the initial cell configurations
-		SeedType = raw_input("  > Seed from bitmap file? (Y/N): ")
-		if SeedType != "" and SeedType != "n" and SeedType != "N":
-			#Seed from image
-			MainCL.loadImg(tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")) 
-		else:
-			#Seed Strength
-			uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
+	
+	
+	
+	if(not vetoConfig):
+		uinput = raw_input("  > (Int) [2 ^ " + str(res_expo) + " = " + str(2**res_expo) + "] Resolution: 2 to the power of: ")
+		if uinput != "":
+			res_expo = int(uinput)
+
+	#Set the resolution
+	MainCL.initHostArrays(res_expo)
+
+	if(not vetoConfig):
+		#Have the user select one of the kernel automata rules
+		ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
+		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
+
+	#Load the selected kernel
+	MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+	
+	#Randomly seed host array	
+	MainCL.seed(seed_strength)
+	
+	if(not vetoConfig):
+		if usePreset == "N" or usePreset == "n":
+			#Query user about seeding the initial cell configurations
+			SeedType = raw_input("  > Seed from bitmap file? (Y/N): ")
+			if SeedType != "" and SeedType != "n" and SeedType != "N":
+				#Seed from image
+				MainCL.loadImg(tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")) 
+			else:
+				#Seed Strength
+				uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
+				if uinput != "":
+					MainCL.seed(int(uinput))
+
+			#number of frames to calculate
+			uinput = raw_input("  > (Int) [" + str(iterations) + "] Enter number of frames to calculate: ") 
 			if uinput != "":
-				MainCL.seed(int(uinput))
+				iterations = int(uinput)
 
-		#number of frames to calculate
-		uinput = raw_input("  > (Int) [" + str(iterations) + "] Enter number of frames to calculate: ") 
-		if uinput != "":
-			iterations = int(uinput)
+			#render every x frames
+			uinput = raw_input("  > (Int) [" + str(renderEvery) + "] Render every x frames: ")
+			if uinput != "":
+				renderEvery = int(uinput)
 
-		#render every x frames
-		uinput = raw_input("  > (Int) [" + str(renderEvery) + "] Render every x frames: ")
-		if uinput != "":
-			renderEvery = int(uinput)
+			uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered pixels by: ")
+			if uinput != "":
+				image_magnification = int(uinput)
 
-		uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered pixels by: ")
-		if uinput != "":
-			image_magnification = int(uinput)
+			uinput = raw_input("  > Save configuration? (Y/N): ")
+			if uinput != "" and uinput != "n" and uinput != "N":
+				#Save presets
+				sOut = str(res_expo) + ","
+				sOut += ruleFName + "," 
+				sOut += "null" + "," 
+				sOut += str(seed_strength) + "," 
+				sOut += str(iterations) + "," 
+				sOut += str(renderEvery) + "," 
+				sOut += str(image_magnification)
+				config_file = open("Last_Config", "w")
+				config_file.write(sOut)
+				config_file.close()
+				
+			
+
+	#----------------------------------------------------------
+	#-------------- END USER INPUT & CONFIG--------------------
+	#----------------------------------------------------------
+
 
 	#-----
 	# Begin main program loop	
