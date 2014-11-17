@@ -8637,13 +8637,13 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	//if(count >= 800 && count <= 900) {c_out = 1;}
 	
 	//if(count >= 1050 && count <= 1200) {c_out = 1;}
-	if(count >= 780 && count <= 1100) {c_out = 1;}
+	if(count >= 800 && count <= 1200) {c_out = 1;}
 	//if(count >= 920 && count <= 1050) {c_out = 1;}
 	//if(count >= 730 && count <= 820) {c_out = 1;}
 	if(count >= 570 && count <= 630) {c_out = 1;}
 	if(count >= 440 && count <= 470) {c_out = 1;}
 	if(count >= 280 && count <= 310) {c_out = 1;}
-	if(count >= 185 && count <= 193) {c_out = 1;}
+	if(count >= 185 && count <= 190) {c_out = 1;}
 	if(count >= 45 && count <= 46) {c_out = 1;}
 
 	c[my_id] = c_out;
