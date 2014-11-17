@@ -165,6 +165,7 @@ if __name__ == "__main__":
 		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 
 	#Load the selected kernel
+	print "  > LOADING KERNEL"
 	MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 	
 	#Randomly seed host array	
