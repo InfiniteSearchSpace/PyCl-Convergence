@@ -243,6 +243,7 @@ if __name__ == "__main__":
 	renderEvery = 1
 	image_magnification = 1
 	bitmap_render = 0
+	seed_bitmap_image = "null"
 
 	#----------------------------------------------------------
 	#--------------USER INPUT & CONFIG-------------------------
@@ -258,7 +259,7 @@ if __name__ == "__main__":
 		#Overrite the defaults
 		res_expo = 				int(list[0])
 		ruleFName = 			list[1]
-		seedImageFile = 		list[2]
+		seed_bitmap_image = 	list[2]
 		seed_strength = 		int(list[3])
 		renderEvery = 			int(list[4])
 		image_magnification = 	int(list[5])
@@ -285,17 +286,22 @@ if __name__ == "__main__":
 	print "  > LOADING KERNEL"
 	MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 	
-	#Randomly seed host array	
-	MainCL.seed(seed_strength)
+	if vetoConfig and seed_bitmap_image != "null":
+		MainCL.loadImg(seed_bitmap_image) 
+	else :
+		#Randomly seed host array
+		MainCL.seed(seed_strength)
 	
 	if(not vetoConfig):
+			
 		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 		if usePreset == "N" or usePreset == "n":
 			#Query user about seeding the initial cell configurations
 			SeedType = raw_input("  > Seed from bitmap file? (Y/N): ")
 			if SeedType != "" and SeedType != "n" and SeedType != "N":
 				#Seed from image
-				MainCL.loadImg(tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")) 
+				seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
+				MainCL.loadImg(seed_bitmap_image) 
 			else:
 				#Seed Strength
 				uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
@@ -320,7 +326,7 @@ if __name__ == "__main__":
 				#Save presets
 				sOut = str(res_expo) + ","
 				sOut += ruleFName + "," 
-				sOut += "null" + "," 
+				sOut += seed_bitmap_image + "," 
 				sOut += str(seed_strength) + "," 
 				sOut += str(renderEvery) + "," 
 				sOut += str(image_magnification) + "," 
