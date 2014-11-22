@@ -393,6 +393,9 @@ if __name__ == "__main__":
 					else:
 						MainCL.seed(seed_strength)
 					MainCL.initBuffers()
+				if event.button == 999: #Middle Click
+					MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+					MainCL.initBuffers()
 				#print event.button
 			if event.type == 6:
 				if event.button == 1: #Release left
