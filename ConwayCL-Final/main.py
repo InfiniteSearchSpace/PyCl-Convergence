@@ -387,6 +387,12 @@ if __name__ == "__main__":
 					myOrtho += 0.05 #zooom out
 				if event.button == 1: #Left Click
 					panNow = not panNow
+				if event.button == 2: #Middle Click
+					if seed_bitmap_image != "null":
+						MainCL.loadImg(seed_bitmap_image)
+					else:
+						MainCL.seed(seed_strength)
+					MainCL.initBuffers()
 				#print event.button
 			if event.type == 6:
 				if event.button == 1: #Release left
