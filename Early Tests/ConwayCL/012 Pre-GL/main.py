@@ -3,7 +3,6 @@ import numpy as np
 import scipy as sp
 from scipy import misc
 from scipy import ndimage
-from scipy.misc import lena
 import random as r
 import datetime as date
 import time 
@@ -11,123 +10,9 @@ from PIL import Image
 import os
 import tkFileDialog as tfd
 from Tkinter import Tk
-import pygame
-import OpenGL.GL as gl
-from pygame.locals import *
 
 #Don't truncate printed arrays
 np.set_printoptions(threshold=np.nan)
-
-"""
-###########################
-###########################
-"""
-
-class RenderGL:
-	def __init__(self, myCL):
-		self.SCREEN_SIZE = (800,800)
-		self.arraySize = myCL.a.shape
-		#Set the initial size for the generative/host array
-		self.grid_w = self.arraySize[0]
-		self.grid_h = self.arraySize[1]
-		
-		#initialise both buffer to 0 in x,y
-		self.current_grid = np.where(myCL.a!=0, 255, 0)
-
-	def initTexture(self):
-
-		#data = np.flipud(lena()) #insert test data
-		
-		#Set the data source
-		data = self.current_grid
-		w,h = data.shape
-
-		# generate a texture id
-		self.mytexture = gl.glGenTextures(1)
-		
-		#bind? the tex id and some implicit thing?
-		gl.glBindTexture(gl.GL_TEXTURE_3D,self.mytexture)
-
-		# texture mode and parameters controlling wrapping and scaling
-		#gl.glTexEnvf( gl.GL_TEXTURE_ENV, gl.GL_TEXTURE_ENV_MODE, gl.GL_MODULATE )
-		#gl.glTexParameterf( gl.GL_TEXTURE_2D, gl.GL_TEXTURE_WRAP_S, gl.GL_REPEAT )
-		#gl.glTexParameterf( gl.GL_TEXTURE_2D, gl.GL_TEXTURE_WRAP_T, gl.GL_REPEAT )
-		gl.glTexParameterf( gl.GL_TEXTURE_2D, gl.GL_TEXTURE_MAG_FILTER, gl.GL_NEAREST ) #close up
-		gl.glTexParameterf( gl.GL_TEXTURE_2D, gl.GL_TEXTURE_MIN_FILTER, gl.GL_NEAREST ) #Far away
-		#gl.GL_LINEAR
-		#gl.GL_NEAREST
-
-		# map the image data to the texture. note that if the input
-		# type is GL_FLOAT, the values must be in the range [0..1]
-		gl.glTexImage2D(gl.GL_TEXTURE_2D,0,gl.GL_RGB,w,h,0,
-		    gl.GL_LUMINANCE,gl.GL_UNSIGNED_BYTE,data)
-
-
-	def initStage(self,w,h):
-		# set the viewport and projection
-		gl.glViewport(0,0,w,h)
-		gl.glMatrixMode(gl.GL_PROJECTION)
-		gl.glLoadIdentity()
-
-		#Perspectives/layouts
-		#L,R,B,T,?,?
-		#gl.glOrtho(-0.1, 1.1,	-0.1, 1.1,	 0,1)
-				
-		"""offset = 0.5
-		x1 = offset+1
-		x2 = (x1 - 1) *-1
-		y1 = offset+1
-		y2 = (x1 - 1) *-1
-		gl.glOrtho(x2,x1,y2,y1, 0,1)"""
-
-		#no idea what this is for
-		gl.glMatrixMode(gl.GL_MODELVIEW)
-		gl.glLoadIdentity()
-
-		# enable textures, bind to our texture
-		gl.glEnable(gl.GL_TEXTURE_2D)
-
-
-	def changeOrtho(self, offset):
-		x1 = offset+1
-		x2 = (x1 - 1) *-1 
-		y1 = offset+1
-		y2 = (x1 - 1) *-1
-
-		gl.glOrtho(x2,x1,y2,y1, 0,1)
-
-
-	def doDraw(self,w,h,xoff,yoff):
-		# draw a quad
-		gl.glBegin( gl.GL_QUADS )
-		gl.glTexCoord2f( 0+xoff, 1+yoff );    gl.glVertex3f( 0, 1, self.z )
-		gl.glTexCoord2f( 0+xoff, 0+yoff );    gl.glVertex3f( 0, 0, self.z )
-		gl.glTexCoord2f( 1+xoff, 0+yoff );    gl.glVertex3f( 1, 0, self.z )
-		gl.glTexCoord2f( 1+xoff, 1+yoff );    gl.glVertex3f( 1, 1, self.z )
-		gl.glEnd(  )
-
-	def calcOffsets(self,w,h,pm,lm):
-		ox = ( float((pm[0])	*-1)	/w )+0.5#
-		oy = ( float((pm[1])	)		/h )+0.5#
-
-		return (ox,oy)
-
-	def doRender(self, pmouse, last_pm):
-		#Do a full gl render cycle
-		gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT)
-		GLR.initStage(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1])
-		GLR.changeOrtho(myOrtho)
-		GLR.initTexture()
-		
-		offs = GLR.calcOffsets( GLR.SCREEN_SIZE[0], GLR.SCREEN_SIZE[1], pmouse, last_pm)
-
-		GLR.doDraw(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1], offs[0], offs[1])
-
-
-"""
-###########################
-###########################
-"""
 
 class CL:
 	def __init__(self):
@@ -217,10 +102,7 @@ class CL:
 
 
 
-"""
-###########################
-###########################
-"""
+
 
 
 #----------------------------------------------------------
@@ -240,9 +122,9 @@ if __name__ == "__main__":
 
 	res_expo = 10	
 	seed_strength = 3
+	iterations = 100
 	renderEvery = 1
 	image_magnification = 1
-	bitmap_render = 0
 
 	#----------------------------------------------------------
 	#--------------USER INPUT & CONFIG-------------------------
@@ -260,9 +142,9 @@ if __name__ == "__main__":
 		ruleFName = 			list[1]
 		seedImageFile = 		list[2]
 		seed_strength = 		int(list[3])
-		renderEvery = 			int(list[4])
-		image_magnification = 	int(list[5])
-		bitmap_render = 		int(list[6])
+		iterations = 			int(list[4])
+		renderEvery = 			int(list[5])
+		image_magnification = 	int(list[6])
 		
 		vetoConfig = True
 
@@ -280,6 +162,7 @@ if __name__ == "__main__":
 	if(not vetoConfig):
 		#Have the user select one of the kernel automata rules
 		ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
+		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 
 	#Load the selected kernel
 	print "  > LOADING KERNEL"
@@ -289,7 +172,6 @@ if __name__ == "__main__":
 	MainCL.seed(seed_strength)
 	
 	if(not vetoConfig):
-		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 		if usePreset == "N" or usePreset == "n":
 			#Query user about seeding the initial cell configurations
 			SeedType = raw_input("  > Seed from bitmap file? (Y/N): ")
@@ -302,16 +184,17 @@ if __name__ == "__main__":
 				if uinput != "":
 					MainCL.seed(int(uinput))
 
+			#number of frames to calculate
+			uinput = raw_input("  > (Int) [" + str(iterations) + "] Enter number of frames to calculate: ") 
+			if uinput != "":
+				iterations = int(uinput)
+
 			#render every x frames
 			uinput = raw_input("  > (Int) [" + str(renderEvery) + "] Render every x frames: ")
 			if uinput != "":
 				renderEvery = int(uinput)
 
-			uinput = raw_input("  > Render as bitmap files? (Y/N): ")
-			if uinput != "" and uinput != "n" and uinput != "N":
-				bitmap_render = 1
-			
-			uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered bitmap pixels by: ")
+			uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered pixels by: ")
 			if uinput != "":
 				image_magnification = int(uinput)
 
@@ -322,9 +205,9 @@ if __name__ == "__main__":
 				sOut += ruleFName + "," 
 				sOut += "null" + "," 
 				sOut += str(seed_strength) + "," 
+				sOut += str(iterations) + "," 
 				sOut += str(renderEvery) + "," 
-				sOut += str(image_magnification) + "," 
-				sOut += str(bitmap_render)
+				sOut += str(image_magnification)
 				config_file = open("Last_Config", "w")
 				config_file.write(sOut)
 				config_file.close()
@@ -340,96 +223,32 @@ if __name__ == "__main__":
 	# Begin main program loop	
 	#-----
 
-	print "  > Begin OpenGL render"
-
-	GLR = RenderGL(MainCL)
-	pygame.init()
-	screen = pygame.display.set_mode(GLR.SCREEN_SIZE, HWSURFACE|OPENGL|DOUBLEBUF)
-	clock = pygame.time.Clock()    
-	done = False
-
-	#Set & render the initial stage
-	GLR.z = 0
-	GLR.initStage(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1])
-	GLR.changeOrtho(1)
-	GLR.initTexture()
-	GLR.doDraw(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1],0,0)
-
-	myOrtho = 0
-	pygmouse = (GLR.SCREEN_SIZE[0]/2,GLR.SCREEN_SIZE[1]/2)
-	lastMousePos = pygmouse
-
 	MainCL.initBuffers()
-	renderNum = 0
-	i = 0
-	panNow = False
-	#Let's do this for a while
-	while done==False:
-		
-		#Pygame Event Handler
-		for event in pygame.event.get():
-			#print event.type
-			if event.type == QUIT:
-				done = True
-			if event.type == KEYUP and event.key == K_ESCAPE:
-				done = True
-				
-			if event.type == 5:
-				if event.button == 4: #scrollup'
-					myOrtho += -0.05 #zooom in
-				if event.button == 5: #scrolldown
-					myOrtho += 0.05 #zooom out
-				if event.button == 1: #Left Click
-					panNow = not panNow
-				#print event.button
-			if event.type == 6:
-				if event.button == 1: #Release left
-					#lastMousePos = pygame.mouse.get_pos()
-					#print "snap:", lastMousePos
-					panNow = False
-				#print event.button
-		
-		#Min, max zoom corrector
-		if myOrtho > 2:
-			myOrtho = 2 #Out
-		if myOrtho < -0.49:
-			myOrtho = -0.49 #In
 
-		#-----
-		# Begin main program loop	
-		#-----
-		i += 1
-		#Run the CL
+	#Diagnostics
+	total_cells = iterations * MainCL.ar_ySize*MainCL.ar_ySize
+	renderNum = 0
+
+	#Run the loop
+	print "Running:", "{:,}".format(MainCL.ar_ySize), "x", "{:,}".format(MainCL.ar_ySize), "for", "{:,}".format(iterations), "iterations,", "{:,}".format(total_cells), "total cells"
+	time1=time.clock()
+	for i in range(iterations):
 		MainCL.execute()
-		
-		#for every rendered CL frame
 		if i % renderEvery == 0:
 			MainCL.getData()
-			
-			#Bottleneck, get the data from CL
-			GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255, 0))
-
-			i = 0 #reset time
-			
-			#Print out bitmap image
-			if bitmap_render == 1:
-				MainCL.bitRender(renderNum, image_magnification)
-			
-			#Count the renders
+			MainCL.bitRender(renderNum, image_magnification)
+			time2=time.clock()
+			if i != 0:
+				print "Img:", renderNum+1, "/", "{:,}".format(iterations/renderEvery), " - ", (float(renderNum+1)/float(iterations/renderEvery))*100, "%", "of", "{:,}".format(total_cells)
+				print "ETA:", int((total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))*(float(renderNum+1)/float(iterations/renderEvery))), "/", unicode(int(total_cells/(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))), "s. Cells/Sec.", "{:,}".format(int(renderEvery*MainCL.ar_ySize*MainCL.ar_ySize/(time2-time1)))
+			time1 = time2
 			renderNum += 1
-		
-		#get mouse position for panning
-		if panNow:
-			pygmouse = pygame.mouse.get_pos()
 
+	#Write the output to the terminal (for testing)
+	if MainCL.ar_ySize <= 100:
+		print " > Begin CPU Render"
+		MainCL.render()
+	else:
+		print " > Array size must be <= 100 to attempt a terminal render"
 
-		
-		#Do the OpenGL render
-		GLR.doRender(pygmouse, lastMousePos)
-		
-		#Refresh display
-		pygame.display.flip()
-		
-		
-
-	pygame.quit()
+	print " > DONE!"
