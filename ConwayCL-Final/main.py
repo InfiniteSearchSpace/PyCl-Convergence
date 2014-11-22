@@ -393,7 +393,9 @@ if __name__ == "__main__":
 					else:
 						MainCL.seed(seed_strength)
 					MainCL.initBuffers()
-				if event.button == 999: #Middle Click
+				if event.button == 9: #Middle Click
+					ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
+					print "  > LOADING KERNEL"
 					MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 					MainCL.initBuffers()
 				#print event.button

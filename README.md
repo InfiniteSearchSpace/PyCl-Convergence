@@ -12,3 +12,5 @@ Spam the ENTER key to use default settings
  - Scroll to zoom
 
  - Click the scrollwheel to restart/reseed world with same settings
+
+ - 'Forward' mouse button to change rule
