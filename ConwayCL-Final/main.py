@@ -368,7 +368,7 @@ if __name__ == "__main__":
 	MainCL.initBuffers()
 	renderNum = 0
 	i = 0
-	panNow = False
+	panNow = True
 	#Let's do this for a while
 	while done==False:
 		
@@ -392,7 +392,7 @@ if __name__ == "__main__":
 				if event.button == 1: #Release left
 					#lastMousePos = pygame.mouse.get_pos()
 					#print "snap:", lastMousePos
-					panNow = False
+					panNow = True
 				#print event.button
 		
 		#Min, max zoom corrector
