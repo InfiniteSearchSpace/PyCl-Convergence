@@ -14,3 +14,5 @@ Spam the ENTER key to use default settings
  - Click the scrollwheel to restart/reseed world with same settings
 
  - 'Forward' mouse button to change rule
+
+ - 'Back' mouse button to use a Bitmap image seed

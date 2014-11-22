@@ -107,8 +107,9 @@ class RenderGL:
 		gl.glEnd(  )
 
 	def calcOffsets(self,w,h,pm,lm):
-		ox = ( float((pm[0])	*-1)	/w )+0.5#
-		oy = ( float((pm[1])	)		/h )+0.5#
+#					Mouse Pos        screen:scroll  centre
+		ox = ( float((pm[0])	*-1)	/(w*0.5) ) + 1
+		oy = ( float((pm[1])	)		/(h*0.5) ) + 1
 
 		return (ox,oy)
 
@@ -306,7 +307,7 @@ if __name__ == "__main__":
 				#Seed Strength
 				uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
 				if uinput != "":
-					MainCL.seed(int(uinput))
+					seed_strength = int(uinput)
 
 			#render every x frames
 			uinput = raw_input("  > (Int) [" + str(renderEvery) + "] Render every x frames: ")
@@ -323,6 +324,7 @@ if __name__ == "__main__":
 
 			uinput = raw_input("  > Save configuration? (Y/N): ")
 			if uinput != "" and uinput != "n" and uinput != "N":
+
 				#Save presets
 				sOut = str(res_expo) + ","
 				sOut += ruleFName + "," 
@@ -331,6 +333,8 @@ if __name__ == "__main__":
 				sOut += str(renderEvery) + "," 
 				sOut += str(image_magnification) + "," 
 				sOut += str(bitmap_render)
+				
+				#Write file
 				config_file = open("Last_Config", "w")
 				config_file.write(sOut)
 				config_file.close()
@@ -393,10 +397,14 @@ if __name__ == "__main__":
 					else:
 						MainCL.seed(seed_strength)
 					MainCL.initBuffers()
-				if event.button == 9: #Middle Click
+				if event.button == 9: #Forward Mouse
 					ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
 					print "  > LOADING KERNEL"
 					MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+					MainCL.initBuffers()
+				if event.button == 8: #Back Mouse
+					seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
+					MainCL.loadImg(seed_bitmap_image)
 					MainCL.initBuffers()
 				#print event.button
 			if event.type == 6:
