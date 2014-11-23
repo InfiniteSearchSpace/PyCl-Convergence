@@ -25,7 +25,7 @@ np.set_printoptions(threshold=np.nan)
 
 class RenderGL:
 	def __init__(self, myCL):
-		self.SCREEN_SIZE = (800,800)
+		self.SCREEN_SIZE = (1024,1024)
 		self.arraySize = myCL.a.shape
 		#Set the initial size for the generative/host array
 		self.grid_w = self.arraySize[0]
@@ -374,6 +374,7 @@ if __name__ == "__main__":
 	i = 0
 	panNow = True
 	#Let's do this for a while
+	paused = False
 	while done==False:
 		
 		#Pygame Event Handler
@@ -383,14 +384,22 @@ if __name__ == "__main__":
 				done = True
 			if event.type == KEYUP and event.key == K_ESCAPE:
 				done = True
-				
+			if event.type == KEYUP and event.key == 114:
+				if bitmap_render != 0:
+					bitmap_render = 0
+					print "Recording off"
+				else:
+					bitmap_render = 1
+					print "Recording ON"
 			if event.type == 5:
 				if event.button == 4: #scrollup'
 					myOrtho += -0.05 #zooom in
 				if event.button == 5: #scrolldown
 					myOrtho += 0.05 #zooom out
-				if event.button == 1: #Left Click
-					panNow = not panNow
+				#if event.button == 1: #Left Click
+				#	panNow = not panNow
+				if event.button == 3: #Right Click
+					paused = not paused
 				if event.button == 2: #Middle Click
 					if seed_bitmap_image != "null":
 						MainCL.loadImg(seed_bitmap_image)
@@ -423,25 +432,31 @@ if __name__ == "__main__":
 		#-----
 		# Begin main program loop	
 		#-----
-		i += 1
-		#Run the CL
-		MainCL.execute()
+		if not paused:
+			i += 1
+			#Run the CL
+			MainCL.execute()
 		
-		#for every rendered CL frame
-		if i % renderEvery == 0:
-			MainCL.getData()
+			#for every rendered CL frame
+			if i % renderEvery == 0:
+				MainCL.getData()
 			
-			#Bottleneck, get the data from CL
-			GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255, 0))
+				#Bottleneck, get the data from CL
+				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255, 0))
 
-			i = 0 #reset time
+				i = 0 #reset time
 			
-			#Print out bitmap image
-			if bitmap_render == 1:
-				MainCL.bitRender(renderNum, image_magnification)
-			
-			#Count the renders
-			renderNum += 1
+				#Print out bitmap image
+				if bitmap_render == 1:
+					MainCL.bitRender(renderNum, image_magnification)
+					#Count the renders
+					renderNum += 1
+				
+		
+
+		#-----
+		# End CL
+		#-----
 		
 		#get mouse position for panning
 		if panNow:
