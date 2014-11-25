@@ -18,33 +18,32 @@ I encourage anyone who is willing to contribute to this code do so:
 
 ### OpenCL CPU Framework:
 
-# AMD
+AMD
 
  * http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing-app-sdk/
 
-# Intel
+Intel
 
  * https://software.intel.com/en-us/intel-opencl
 
 ### GPU OpenCL compatibility:
 
-# nvidia:
+nvidia:
 
  * sudo apt-get install nvidia-opencl-dev
 
-# AMD:
+AMD:
 
  * Pending ... Message me at reddit's /u/slackermanz if you have compatibility suggestions!
 
 
-A "Litmus Test":
-==========================
-If your machine can run GPU-accelerated simulations with 
+# A "Litmus Test":
+
+If your machine can run GPU-accelerated simulations with https://code.google.com/p/reaction-diffusion/ it should also be able to run this program.
 
 
 
-Once that is set up...
-==========================
+# Once that is set up...
 
 Open the terminal in './PyCl-Convergence-master/ConwayCL-Final'
 
