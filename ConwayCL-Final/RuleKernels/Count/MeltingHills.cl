@@ -277,7 +277,7 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	int c_out = a[my_id];
 		
 	if(count >= 15) {c_out = 0;}
-	if(count >= 12 && count <= 13) {c_out = 1;}
+	if(count >= 12 && count <= 13) {c_out = a[my_id]+1;}
 	if(count <= 7) {c_out = 0;}
 
 	c[my_id] = c_out;

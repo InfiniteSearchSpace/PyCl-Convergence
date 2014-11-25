@@ -14,31 +14,31 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	xoff = 0;
 	yoff = -1;
 	my_offset_id = (my_id + xoff)%ySize + (j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] == 1) {count += 1;}
+	if(a[my_offset_id] != 0) {count += 1;}
 
 	xoff = 1;
 	yoff = -1;
 	my_offset_id = (my_id + xoff)%ySize + (j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] == 1) {count += 1;}
+	if(a[my_offset_id] != 0) {count += 1;}
 
 	xoff = 1;
 	yoff = 0;
 	my_offset_id = (my_id + xoff)%ySize + (j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] == 1) {count += 1;}
+	if(a[my_offset_id] != 0) {count += 1;}
 
 	xoff = -1;
 	yoff = 0;
 	my_offset_id = (my_id + xoff)%ySize + (j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] == 1) {count += 1;}
+	if(a[my_offset_id] != 0) {count += 1;}
 
 	xoff = -1;
 	yoff = -1;
 	my_offset_id = (my_id + xoff)%ySize + (j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] == 1) {count += 1;}
+	if(a[my_offset_id] != 0) {count += 1;}
 
 	int c_out = a[my_id];		
 	if(count >= 3) {c_out = 0;}
-	if(count == 2) {c_out = 1;}
+	if(count == 2) {c_out = a[my_id]+1;}
 	if(count <= 1) {c_out = 0;}
 	c[my_id] = c_out;
 

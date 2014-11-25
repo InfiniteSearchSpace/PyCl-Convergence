@@ -24,8 +24,8 @@ np.set_printoptions(threshold=np.nan)
 """
 
 class RenderGL:
-	def __init__(self, myCL):
-		self.SCREEN_SIZE = (1024,1024)
+	def __init__(self, myCL, dimen):
+		self.SCREEN_SIZE = dimen
 		self.arraySize = myCL.a.shape
 		#Set the initial size for the generative/host array
 		self.grid_w = self.arraySize[0]
@@ -212,9 +212,9 @@ class CL:
 		print self.a
 
 	#Write Bitmap File Render
-	def bitRender(self, rn, zoom):
+	def bitRender(self, rn, zoom, CLMAXVAL):
 		name = "Out/"+"image" + str(rn)
-		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(self.a, zoom, order=0))
+		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(np.where(MainCL.a!=0, 255, 0), zoom, order=0))
 
 
 
@@ -245,6 +245,8 @@ if __name__ == "__main__":
 	image_magnification = 1
 	bitmap_render = 0
 	seed_bitmap_image = "null"
+	CLMAXVAL = 8
+	SCR_DIMS = (1024,1024)
 
 	#----------------------------------------------------------
 	#--------------USER INPUT & CONFIG-------------------------
@@ -284,9 +286,10 @@ if __name__ == "__main__":
 		ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
 
 	#Load the selected kernel
-	print "  > LOADING KERNEL"
+	print "  > LOADING KERNEL..."
 	MainCL.kAutomata = MainCL.loadProgram(ruleFName)
-	
+	print "  > Done!"
+
 	if vetoConfig and seed_bitmap_image != "null":
 		MainCL.loadImg(seed_bitmap_image) 
 	else :
@@ -352,7 +355,7 @@ if __name__ == "__main__":
 
 	print "  > Begin OpenGL render"
 
-	GLR = RenderGL(MainCL)
+	GLR = RenderGL(MainCL, SCR_DIMS)
 	pygame.init()
 	screen = pygame.display.set_mode(GLR.SCREEN_SIZE, HWSURFACE|OPENGL|DOUBLEBUF)
 	clock = pygame.time.Clock()    
@@ -408,8 +411,9 @@ if __name__ == "__main__":
 					MainCL.initBuffers()
 				if event.button == 9: #Forward Mouse
 					ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
-					print "  > LOADING KERNEL"
+					print "  > LOADING KERNEL..."
 					MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+					print "  > Done!"
 					MainCL.initBuffers()
 				if event.button == 8: #Back Mouse
 					seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
@@ -440,15 +444,17 @@ if __name__ == "__main__":
 			#for every rendered CL frame
 			if i % renderEvery == 0:
 				MainCL.getData()
-			
 				#Bottleneck, get the data from CL
-				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255, 0))
+				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0))
+
+				#np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 200), 0)
+				
 
 				i = 0 #reset time
 			
 				#Print out bitmap image
 				if bitmap_render == 1:
-					MainCL.bitRender(renderNum, image_magnification)
+					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL)
 					#Count the renders
 					renderNum += 1
 				
