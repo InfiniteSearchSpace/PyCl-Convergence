@@ -445,9 +445,10 @@ if __name__ == "__main__":
 			if i % renderEvery == 0:
 				MainCL.getData()
 				#Bottleneck, get the data from CL
+				
 				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0))
+				#GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255-(MainCL.a*200)/CLMAXVAL, 0))
 
-				#np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 200), 0)
 				
 
 				i = 0 #reset time
