@@ -215,6 +215,33 @@ class CL:
 	def bitRender(self, rn, zoom, CLMAXVAL):
 		name = "Out/"+"image" + str(rn)
 		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(np.where(MainCL.a!=0, 255, 0), zoom, order=0))
+	
+	#Reload kernel and reseed world
+	def reseed(self):
+		if seed_bitmap_image != "null":
+			MainCL.loadImg(seed_bitmap_image)
+		else:
+			MainCL.seed(seed_strength)
+		print "  > LOADING KERNEL..."
+		MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+		print "  > Done!"
+		MainCL.initBuffers()
+
+	#Prompt user to select a rule
+	def gui_kernel_select(self):
+		ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
+		print "  > LOADING KERNEL..."
+		MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+		print "  > Done!"
+		MainCL.initBuffers()
+		return ruleFName
+
+    #Prompt user to select a seed image
+	def gui_seedimage(self):
+		seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
+		MainCL.loadImg(seed_bitmap_image)
+		MainCL.initBuffers()
+		return seed_bitmap_image
 
 
 
@@ -385,46 +412,48 @@ if __name__ == "__main__":
 			#print event.type
 			if event.type == QUIT:
 				done = True
-			if event.type == KEYUP and event.key == K_ESCAPE:
-				done = True
-			if event.type == KEYUP and event.key == 114:
-				if bitmap_render != 0:
-					bitmap_render = 0
-					print "Recording off"
-				else:
-					bitmap_render = 1
-					print "Recording ON"
+			if event.type == KEYUP:
+				print event.key
+				if event.key == K_ESCAPE:
+					done = True
+				if event.key == K_SPACE:
+					MainCL.reseed()
+				if event.key == 105:
+					seed_bitmap_image = MainCL.gui_seedimage()
+				if event.key == 115:
+					#Get Int
+					#Random Reseed
+					print "random lol"
+				if event.key == 114:
+					ruleFName = MainCL.gui_kernel_select()
+				if event.key == 113:
+					if bitmap_render != 0:
+						bitmap_render = 0
+						print "Recording off"
+					else:
+						bitmap_render = 1
+						print "Recording ON"
 			if event.type == 5:
 				if event.button == 4: #scrollup'
 					myOrtho += -0.05 #zooom in
 				if event.button == 5: #scrolldown
 					myOrtho += 0.05 #zooom out
-				#if event.button == 1: #Left Click
-				#	panNow = not panNow
+				if event.button == 1: #Left Click
+					panNow = not panNow
 				if event.button == 3: #Right Click
 					paused = not paused
 				if event.button == 2: #Middle Click
-					if seed_bitmap_image != "null":
-						MainCL.loadImg(seed_bitmap_image)
-					else:
-						MainCL.seed(seed_strength)
-					MainCL.initBuffers()
+					MainCL.reseed()
 				if event.button == 9: #Forward Mouse
-					ruleFName = tfd.askopenfilename(initialdir="./RuleKernels", title="Select Kernel Rule (*.cl)")
-					print "  > LOADING KERNEL..."
-					MainCL.kAutomata = MainCL.loadProgram(ruleFName)
-					print "  > Done!"
-					MainCL.initBuffers()
+					ruleFName = MainCL.gui_kernel_select()
 				if event.button == 8: #Back Mouse
-					seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
-					MainCL.loadImg(seed_bitmap_image)
-					MainCL.initBuffers()
+					seed_bitmap_image = MainCL.gui_seedimage()
 				#print event.button
-			if event.type == 6:
-				if event.button == 1: #Release left
+			#if event.type == 6:
+				#if event.button == 1: #Release left
 					#lastMousePos = pygame.mouse.get_pos()
 					#print "snap:", lastMousePos
-					panNow = True
+					#panNow = not panNow
 				#print event.button
 		
 		#Min, max zoom corrector
@@ -468,6 +497,8 @@ if __name__ == "__main__":
 		#get mouse position for panning
 		if panNow:
 			pygmouse = pygame.mouse.get_pos()
+		else:
+			pygmouse = (0,0)
 
 
 		
