@@ -46,6 +46,7 @@ class RenderGL:
 		self.mytexture = gl.glGenTextures(1)
 		
 		#bind? the tex id and some implicit thing?
+		#2D causes epic memory leaks
 		gl.glBindTexture(gl.GL_TEXTURE_3D,self.mytexture)
 
 		# texture mode and parameters controlling wrapping and scaling
@@ -201,6 +202,16 @@ class CL:
 		seedAr = np.where(seedAr==1, 1, 0)
 		self.a = np.int32(seedAr)
 
+	#User Input - Place Square
+	def place_square(self,x,y,size):
+		#MainCL.getData()
+		seedAr = self.a
+		for xi in range(size):
+			for yi in range(size):
+				self.a[(xi+x)%(2**res_expo)][(yi+y)%(2**res_expo)] = 1
+		self.a = np.int32(seedAr)
+		#MainCL.initBuffers()
+
 	#Seed from image
 	def loadImg(self, seedImage):
 		img = np.array(Image.open(seedImage))
@@ -298,12 +309,14 @@ if __name__ == "__main__":
 		vetoConfig = True
 
 	
-	
-	
 	if(not vetoConfig):
 		uinput = raw_input("  > (Int) [2 ^ " + str(res_expo) + " = " + str(2**res_expo) + "] Resolution: 2 to the power of: ")
 		if uinput != "":
-			res_expo = int(uinput)
+			if int(uinput) < 16:
+				res_expo = int(uinput)
+			else:
+				print "2 ^", int(uinput), "resolution is too large. 2^16 = ", 2**16, "x", 2**16, "pixels. You may disable this limit manually, just above this message in main.py"
+				res_expo = 9
 
 	#Set the resolution
 	MainCL.initHostArrays(res_expo)
@@ -317,12 +330,6 @@ if __name__ == "__main__":
 	MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 	print "  > Done!"
 
-	if vetoConfig and seed_bitmap_image != "null":
-		MainCL.loadImg(seed_bitmap_image) 
-	else :
-		#Randomly seed host array
-		MainCL.seed(seed_strength)
-	
 	if(not vetoConfig):
 			
 		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
@@ -370,6 +377,11 @@ if __name__ == "__main__":
 				config_file.close()
 				
 			
+	if vetoConfig and seed_bitmap_image != "null":
+		MainCL.loadImg(seed_bitmap_image) 
+	else :
+		#Randomly seed host array
+		MainCL.seed(seed_strength)
 
 	#----------------------------------------------------------
 	#-------------- END USER INPUT & CONFIG--------------------
@@ -402,11 +414,15 @@ if __name__ == "__main__":
 	MainCL.initBuffers()
 	renderNum = 0
 	i = 0
-	panNow = True
+	panNow = False
+	drawNow = False
+	flipDrawNow = False
 	#Let's do this for a while
 	paused = False
 	while done==False:
 		
+		pygmouse = pygame.mouse.get_pos()
+
 		#Pygame Event Handler
 		for event in pygame.event.get():
 			#print event.type
@@ -417,14 +433,17 @@ if __name__ == "__main__":
 				if event.key == K_ESCAPE:
 					done = True
 				if event.key == K_SPACE:
-					MainCL.reseed()
-				if event.key == 105:
+					#MainCL.reseed()
+					panNow = not panNow
+				if event.key == 116:
 					seed_bitmap_image = MainCL.gui_seedimage()
-				if event.key == 115:
+				if event.key == 119:
 					#Get Int
-					#Random Reseed
-					print "random lol"
+					seed_strength = 256
+					MainCL.reseed()
 				if event.key == 114:
+					MainCL.reseed()
+				if event.key == 101:
 					ruleFName = MainCL.gui_kernel_select()
 				if event.key == 113:
 					if bitmap_render != 0:
@@ -439,9 +458,12 @@ if __name__ == "__main__":
 				if event.button == 5: #scrolldown
 					myOrtho += 0.05 #zooom out
 				if event.button == 1: #Left Click
-					panNow = not panNow
+					#panNow = not panNow
+					drawNow = True
+					MainCL.getData()
 				if event.button == 3: #Right Click
 					paused = not paused
+					#panNow = not panNow
 				if event.button == 2: #Middle Click
 					MainCL.reseed()
 				if event.button == 9: #Forward Mouse
@@ -449,13 +471,27 @@ if __name__ == "__main__":
 				if event.button == 8: #Back Mouse
 					seed_bitmap_image = MainCL.gui_seedimage()
 				#print event.button
-			#if event.type == 6:
-				#if event.button == 1: #Release left
+			if event.type == 6:
+				if event.button == 1: #Release left
+					drawNow = False
+					flipDrawNow = False
+					MainCL.initBuffers()
 					#lastMousePos = pygame.mouse.get_pos()
 					#print "snap:", lastMousePos
 					#panNow = not panNow
 				#print event.button
+
+		if drawNow:
+			brush_size = 7
+			mx = (float(pygmouse[1]) / GLR.SCREEN_SIZE[0])*(2**res_expo) - brush_size/2
+			my = (float(pygmouse[0]) / GLR.SCREEN_SIZE[1])*(2**res_expo) - brush_size/2
+			MainCL.place_square(int(mx),int(my),brush_size)
+			flipDrawNow = not flipDrawNow
+			if not paused and drawNow == flipDrawNow:
+				MainCL.initBuffers()
+				
 		
+
 		#Min, max zoom corrector
 		if myOrtho > 2:
 			myOrtho = 2 #Out
@@ -494,10 +530,8 @@ if __name__ == "__main__":
 		# End CL
 		#-----
 		
-		#get mouse position for panning
-		if panNow:
-			pygmouse = pygame.mouse.get_pos()
-		else:
+		#Adjust mouse position for panning
+		if not panNow:
 			pygmouse = (0,0)
 
 

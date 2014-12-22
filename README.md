@@ -55,11 +55,13 @@ Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the 
 	
  * Right Click to toggle pause
 
- * Click the scrollwheel or press 'Spacebar' key to restart/reseed world
+ * Click the scrollwheel or press 'R' key to restart/reseed world
 
- * 'Forward' mouse button or 'R' key to change rule
+ * 'Forward' mouse button or 'E' key to change rule
 
- * 'Back' mousebutton or 'I' key to use a Bitmap image seed
+ * 'Back' mousebutton or 'T' key to use a Bitmap image seed
 
  * 'Q' key to toggle image-capture recording
+
+ * 'SPACEBAR' to toggle mouse-panning
 
