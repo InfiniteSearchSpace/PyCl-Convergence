@@ -481,7 +481,7 @@ if __name__ == "__main__":
 					#panNow = not panNow
 				#print event.button
 
-		if drawNow:
+		if drawNow and not panNow:
 			brush_size = 7
 			mx = (float(pygmouse[1]) / GLR.SCREEN_SIZE[0])*(2**res_expo) - brush_size/2
 			my = (float(pygmouse[0]) / GLR.SCREEN_SIZE[1])*(2**res_expo) - brush_size/2
