@@ -202,6 +202,11 @@ class CL:
 		seedAr = np.where(seedAr==1, 1, 0)
 		self.a = np.int32(seedAr)
 
+	#Return 0s array
+	def zeroWorld(self):
+		self.a = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
+		
+
 	#User Input - Place Square
 	def place_square(self,x,y,size):
 		#MainCL.getData()
@@ -233,6 +238,14 @@ class CL:
 			MainCL.loadImg(seed_bitmap_image)
 		else:
 			MainCL.seed(seed_strength)
+		print "  > LOADING KERNEL..."
+		MainCL.kAutomata = MainCL.loadProgram(ruleFName)
+		print "  > Done!"
+		MainCL.initBuffers()
+
+	#Reload kernel and return empty world
+	def reseed_zero(self):
+		MainCL.zeroWorld()
 		print "  > LOADING KERNEL..."
 		MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 		print "  > Done!"
@@ -438,9 +451,10 @@ if __name__ == "__main__":
 				if event.key == 116:
 					seed_bitmap_image = MainCL.gui_seedimage()
 				if event.key == 119:
+					MainCL.reseed_zero()
 					#Get Int
-					seed_strength = 256
-					MainCL.reseed()
+					#seed_strength = 256
+					#MainCL.reseed()
 				if event.key == 114:
 					MainCL.reseed()
 				if event.key == 101:

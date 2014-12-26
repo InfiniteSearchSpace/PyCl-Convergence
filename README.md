@@ -65,3 +65,5 @@ Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the 
 
  * 'SPACEBAR' to toggle mouse-panning
 
+ * 'W' to wipe the screen clear of all living cells
+
