@@ -11,7 +11,6 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	int xoff = 0;
 	int yoff = 0;
 
-	
 	xoff = -6;
 	yoff = -1;
 	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
@@ -311,17 +310,13 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	yoff = 1;
 	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
 	if(a[my_offset_id] != 0) {count += 1;}
-
-
-
-	//:0,999,0,:21,32,1,:7,7,1,
-	//:0,999,0,:24,43,1,:7,7,1,
 
 	int c_out = 0;
 
-	if(count >= 24 && count <= 43)  {c_out = a[my_id] + 1;}
-	if(count == 7)  {c_out = a[my_id] + 1;}
 
+	if(count >= 21 && count <= 32) {c_out = a[my_id] + 1;}
+	if(count == 7) {c_out = a[my_id] + 1;}
+	
 	c[my_id] = c_out;
 
 }

@@ -11,8636 +11,7987 @@ __kernel void RunAutomata(const int ySize, __global int* a, __global int* c)
 	int xoff = 0;
 	int yoff = 0;
 
+	int c_out = a[my_id];
+
+	
+
+	xoff = -14;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+//Get gliders to be birthed from wave's crystal form
+
+	
+	if(count >= 30) {c_out = 0;}
+	if(count >= 40 && count <= 42) {c_out = a[my_id]+1;}
+	if(count >= 91 && count <= 155) {c_out = a[my_id]+1;}
+	
+	count = 0;
+
+
+
+	xoff = -3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+
+	if(count >= 13 && count <= 19) {c_out = a[my_id]+1;}	
+	if(count >= 9 && count <= 9) {c_out = a[my_id]+1;}	
+	
+	count = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	xoff = -39;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -39;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -38;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -37;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -36;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -35;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -34;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -33;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -32;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -31;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -30;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -29;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -28;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -27;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -26;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -25;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -24;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -23;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -22;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -21;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -20;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -19;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -18;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -17;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -16;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -15;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -14;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -13;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -12;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -11;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -10;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -9;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -8;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -7;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -6;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -5;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -4;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -3;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -2;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = -1;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 0;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 1;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 2;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 3;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 4;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 5;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 6;
+	yoff = 39;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 7;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 8;
+	yoff = 38;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 9;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 10;
+	yoff = 37;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 11;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 12;
+	yoff = 36;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 13;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 14;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 15;
+	yoff = 35;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 16;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 17;
+	yoff = 34;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 18;
+	yoff = 33;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 19;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 20;
+	yoff = 32;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = -31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 21;
+	yoff = 31;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 22;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 23;
+	yoff = 30;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 24;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 25;
+	yoff = 29;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 26;
+	yoff = 28;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 27;
+	yoff = 27;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = -26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 28;
+	yoff = 26;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 24;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 29;
+	yoff = 25;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = -23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = -22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 22;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 30;
+	yoff = 23;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = -21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 31;
+	yoff = 21;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = -20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = -19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = 19;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 32;
+	yoff = 20;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = -18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 33;
+	yoff = 18;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = -17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = -16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = 16;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 34;
+	yoff = 17;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 13;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 14;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 35;
+	yoff = 15;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 11;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 36;
+	yoff = 12;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 9;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 37;
+	yoff = 10;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 3;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 4;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 7;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 38;
+	yoff = 8;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = -6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = -5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = -2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = -1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = 0;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = 1;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = 2;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = 5;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+	xoff = 39;
+	yoff = 6;
+	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
+	if(a[my_offset_id] != 0) {count += 1;}
+
+
+
 	
 	
-	xoff = -23;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -23;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -22;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -21;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -20;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -19;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -18;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -17;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -16;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -15;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -14;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -13;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -12;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -11;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -10;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -9;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -8;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -7;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -6;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -5;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -4;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -3;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -2;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = -1;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 0;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 1;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 2;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 3;
-	yoff = 23;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 4;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 5;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 6;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 7;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 8;
-	yoff = 22;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 9;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 10;
-	yoff = 21;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 11;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 12;
-	yoff = 20;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 13;
-	yoff = 19;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 14;
-	yoff = 18;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 15;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 16;
-	yoff = 17;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 15;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 17;
-	yoff = 16;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 18;
-	yoff = 14;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 19;
-	yoff = 13;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 11;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 20;
-	yoff = 12;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 9;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 21;
-	yoff = 10;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 4;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 5;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 6;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 7;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 22;
-	yoff = 8;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = -3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = -2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = -1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = 0;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = 1;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = 2;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	xoff = 23;
-	yoff = 3;
-	my_offset_id = ((my_id + xoff%ySize)%ySize + j*ySize + ySize*yoff)%tSize;
-	if(a[my_offset_id] != 0) {count += 1;}
-
-	int c_out = 0;
-
-	if(count >= 800 && count <= 1200) {c_out = a[my_id]+1;}
-	if(count >= 570 && count <= 630) {c_out = a[my_id]+1;}
-	if(count >= 440 && count <= 470) {c_out = a[my_id]+1;}
-	if(count >= 280 && count <= 310) {c_out = a[my_id]+1;}
-	if(count >= 185 && count <= 190) {c_out = a[my_id]+1;}
-	if(count >= 45 && count <= 46) {c_out = a[my_id]+1;}
+	if(count >= 660 && count <= 1000) {c_out = a[my_id]+1;}		
+	if(count >= 520 && count <= 550) {c_out = 0;}	
+	if(count >= 1350 || count <= 50) {c_out = 0;}
+	//if(count >= 610 && count <= 665) {c_out = a[my_id]+1;}		
 
 	c[my_id] = c_out;
 

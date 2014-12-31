@@ -228,9 +228,49 @@ class CL:
 		print self.a
 
 	#Write Bitmap File Render
-	def bitRender(self, rn, zoom, CLMAXVAL):
+	def bitRender(self, rn, zoom, CLMAXVAL, colour_mode):
 		name = "Out/"+"image" + str(rn)
-		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(np.where(MainCL.a!=0, 255, 0), zoom, order=0))
+		#sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(np.where(MainCL.a!=0, 255, 0), zoom, order=0))
+		#sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(MainCL.a, zoom, order=0))
+
+		#From live-rendering:
+		#np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0)
+
+		RGB_array = np.zeros((self.ar_ySize,self.ar_ySize,3), dtype=np.int32)
+
+		if colour_mode == 0:
+			RGB_array[:,:,0] = np.where(MainCL.a!=0, 255, 0)
+			RGB_array[:,:,1] = np.where(MainCL.a!=0, 255, 0)
+			RGB_array[:,:,2] = np.where(MainCL.a!=0, 255, 0)
+
+		if colour_mode == 1:
+			RGB_array[:,:,0] = np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0)
+			RGB_array[:,:,1] = np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0)
+			RGB_array[:,:,2] = np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0)
+
+		if colour_mode == 2:
+			RGB_array[:,:,1] = np.where(MainCL.a[:,:] !=0, 255, 0)
+			RGB_array[:,:,2] = np.where(MainCL.a[:,:] !=0, 255, 0)
+
+			RGB_array[:,:,0] = np.where(MainCL.a[:,:] >= 4, 255, RGB_array[:,:,0])
+			RGB_array[:,:,1] = np.where(MainCL.a[:,:] >= 4, 0, RGB_array[:,:,1])
+			RGB_array[:,:,2] = np.where(MainCL.a[:,:] >= 4, 0, RGB_array[:,:,2])
+
+			RGB_array[:,:,0] = np.where(MainCL.a[:,:] >= 12, 0, RGB_array[:,:,0])
+			RGB_array[:,:,1] = np.where(MainCL.a[:,:] >= 12, 255, RGB_array[:,:,1])
+			RGB_array[:,:,2] = np.where(MainCL.a[:,:] >= 12, 0, RGB_array[:,:,2])
+
+			RGB_array[:,:,0] = np.where(MainCL.a[:,:] >= 24, 0, RGB_array[:,:,0])
+			RGB_array[:,:,1] = np.where(MainCL.a[:,:] >= 24, 0, RGB_array[:,:,1])
+			RGB_array[:,:,2] = np.where(MainCL.a[:,:] >= 24, 255, RGB_array[:,:,2])
+
+		if colour_mode == 3:
+
+			RGB_array[:,:,0] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<50, 255-(MainCL.a*255)/(50), 55), 0))
+			RGB_array[:,:,1] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<8, (MainCL.a*255)/(8), 55), 0))
+			RGB_array[:,:,2] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<128, (MainCL.a*255)/128, 255), 0))
+
+		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(RGB_array, (zoom,zoom,1), order=0))
 	
 	#Reload kernel and reseed world
 	def reseed(self):
@@ -534,7 +574,7 @@ if __name__ == "__main__":
 			
 				#Print out bitmap image
 				if bitmap_render == 1:
-					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL)
+					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL, 3)
 					#Count the renders
 					renderNum += 1
 				
