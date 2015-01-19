@@ -81,15 +81,15 @@ VIEW
 
  * The game world will become centered on the mouse location
 
- * Zoom in or out with the scrollwheel
+ * Scrollwheel to Zoom in or out
 
 GAME (Temporarily Default Override)
 
- * Spacebar or Left Click to shoot at the mouse position
+ * 'I' to toggle use of 'Game Mode'
+
+ * Spacebar or Left Click to shoot at the Mouse Position
 
  * 'F' to toggle use of 'Photographic' filter
-
- * 'I' to toggle use of 'Game Mode'
 
 	
 
