@@ -51,8 +51,6 @@ Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the 
 
  * Spam the ENTER key to use default settings
 
- * Scrollwheel to zoom
-	
  * Right Click to toggle pause
 
  * Click the scrollwheel or press 'R' key to restart/reseed world
@@ -61,9 +59,44 @@ Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the 
 
  * 'Back' mousebutton or 'T' key to use a Bitmap image seed
 
- * 'Q' key to toggle image-capture recording
+ * 'Q' key to toggle image-capture recording (creates a series of Avidemux-compatible Bitmaps)
 
- * 'SPACEBAR' to toggle mouse-panning
+ * 'P' to wipe the screen clear of all living cells
 
- * 'W' to wipe the screen clear of all living cells
+ * 'F' to toggle use of 'Photographic' filter
+
+ * 'I' to toggle use of 'Game Mode' (Prerequisite: 'F' for Filter Mode must be on)
+
+There's Three Modes: DRAW, VIEW, and GAME
+
+DRAW (Typical Default)
+
+ * Scrollwheel to increase Drawn Square Size
+
+ * 'SPACEBAR' to toggle DRAW or VIEW modes
+
+VIEW
+
+ * 'SPACEBAR' to toggle DRAW or VIEW modes
+
+ * The game world will become centered on the mouse location
+
+ * Zoom in or out with the scrollwheel
+
+GAME (Temporarily Default Override)
+
+ * Spacebar or Left Click to shoot at the mouse position
+
+ * 'F' to toggle use of 'Photographic' filter
+
+ * 'I' to toggle use of 'Game Mode'
+
+	
+
+
+
+
+
+
+
 
