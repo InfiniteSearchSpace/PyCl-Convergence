@@ -154,12 +154,14 @@ class CL:
 		fstr = "".join(f.readlines())
 		return fstr
 
+
 	#initialize host side (CPU) arrays
 	def initHostArrays(self, res_expo):
 		#Use ar_ySize below to increase the worldspace, should be a power of 2
 		self.ar_ySize = np.int32(2**res_expo)
 		#-------------------------------------------
-		self.a = np.ones((self.ar_ySize,self.ar_ySize), dtype=np.int32)
+		self.a = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
+		self.gameAr = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 
 	#Create the cl buffers
 	def initBuffers(self):
@@ -168,6 +170,7 @@ class CL:
 		#create OpenCL buffers
 		self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
 		self.b_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
+		self.render_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32))
 		self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.a.nbytes)
 
 	#Run Kernel, swapping/transitioning cell states between buffer a & b
@@ -180,16 +183,44 @@ class CL:
 		self.tickState = not self.tickState
 
 
+	#Build Render-layered frame
+	def build_render(self):
+		if self.tickState == False:
+			self.kUtil.AddToBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf)
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)		
+		else:
+			self.kUtil.AddToBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf)
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)	
+
+	#Build Render-layered frame
+	def build_render_no_blur(self):
+		if self.tickState == False:
+			self.kUtil.ReplaceBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf)
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)		
+		else:
+			self.kUtil.ReplaceBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf)
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)	
+
 
 	#Read from GPU buffer to host's array (self.a)
 	def getData(self):
 		if self.tickState == False:
-			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.dest_buf)
-			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
-		else:
 			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.dest_buf)
 			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
+		else:
+			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.dest_buf)
+			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
 			
+
+	#Read from GPU buffer to host's array (self.a)
+	def getRenderData(self):
+			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.render_buf, self.dest_buf)
+			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
+
+	#Read from GPU buffer to host's array (self.a)
+	def getGameState(self):
+			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.render_buf, self.dest_buf)
+			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.gameAr).wait()
 		
 
 	#Seed, fill buffer
@@ -270,6 +301,18 @@ class CL:
 			RGB_array[:,:,1] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<8, (MainCL.a*255)/(8), 55), 0))
 			RGB_array[:,:,2] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<128, (MainCL.a*255)/128, 255), 0))
 
+		if colour_mode == 4:
+
+			RGB_array[:,:,0] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<50, 255-(MainCL.a*255)/(50), np.where(MainCL.a>355,(MainCL.a/3)%256,0)), 0))
+			RGB_array[:,:,1] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<8, (MainCL.a*255)/(8), np.where(MainCL.a>127,(MainCL.a)%256,55)), 0))
+			RGB_array[:,:,2] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<128, (MainCL.a*255)/128, np.where(MainCL.a>127,255-((MainCL.a/3)%256),55)), 0))
+
+		if colour_mode == 5:
+
+			RGB_array[:,:,0] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<50, 255-(MainCL.a*255)/(50), 0), 0))
+			RGB_array[:,:,1] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<8, (MainCL.a*255)/(8), np.where(MainCL.a>99919,255-((MainCL.a/3)%256),np.where(MainCL.a>255,255-((MainCL.a/5)%256),np.where(MainCL.a>63,((MainCL.a)%256),0)))), 0))
+			RGB_array[:,:,2] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<128, (MainCL.a*255)/128, np.where(MainCL.a<256,255-((MainCL.a/3)%256),0)), 0))
+
 		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(RGB_array, (zoom,zoom,1), order=0))
 	
 	#Reload kernel and reseed world
@@ -300,6 +343,14 @@ class CL:
 		MainCL.initBuffers()
 		return ruleFName
 
+	#Hotkey Set Rule
+	def setKernel(self, rulename):
+		print "  > LOADING KERNEL..."
+		MainCL.kAutomata = MainCL.loadProgram(rulename)
+		print "  > Done!"
+		MainCL.initBuffers()
+		return rulename
+
     #Prompt user to select a seed image
 	def gui_seedimage(self):
 		seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
@@ -307,6 +358,24 @@ class CL:
 		MainCL.initBuffers()
 		return seed_bitmap_image
 
+
+
+	#GPU Place Block
+	#User Input - Place Square
+	def place_square_GPU(self,x,y,size):
+		#self.a[(xi+x)%(2**res_expo)][(yi+y)%(2**res_expo)] = 1
+		if self.tickState == False:
+			self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.a_buf)
+		else:
+			self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.b_buf)
+		
+	def place_square_filter_GPU(self,x,y,size):
+		self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.render_buf)
+
+	def configUI(self, uBlock):
+		self.mx = np.int32(uBlock[0])
+		self.my = np.int32(uBlock[1])
+		self.blockSize = np.int32(uBlock[2])
 
 
 """
@@ -342,10 +411,15 @@ if __name__ == "__main__":
 	#----------------------------------------------------------
 	#--------------USER INPUT & CONFIG-------------------------
 	#----------------------------------------------------------
+
+	MainCL.configUI((64,64,64))
+
 	last_config = MainCL.loadConfig("Last_Config")
+	playlist = MainCL.loadConfig("RulePlaylist")
 	vetoConfig = False
 
 	list = [item for item in last_config.split(',') if item.strip()]
+	rule_playlist_ar = [item for item in playlist.split(',') if item.strip()]
 	
 	#replay last config?
 	uinput = raw_input("  > Replay last custom configuration? (Y/N): ")
@@ -472,6 +546,30 @@ if __name__ == "__main__":
 	flipDrawNow = False
 	#Let's do this for a while
 	paused = False
+
+	brush_size = 17
+
+	use_filter = True
+
+	show_ship = True	
+	shoot_now = False
+
+	bullet_x = 0
+	bullet_y = 0
+	bullet_life = 0
+	bullet_speed = 0
+	bullet_xv = 0
+	bullet_yv = 0
+	bullet_size = 0
+
+	ship_size = 12
+	ship_x = (2**res_expo)/2
+	ship_y = (2**res_expo)/2
+	ship_xv1 = 0
+	ship_yv1 = 0
+	ship_xv2 = 0
+	ship_yv2 = 0
+
 	while done==False:
 		
 		pygmouse = pygame.mouse.get_pos()
@@ -481,16 +579,36 @@ if __name__ == "__main__":
 			#print event.type
 			if event.type == QUIT:
 				done = True
+			if event.type == 2:
+				if event.key == K_SPACE:
+					#MainCL.reseed()
+					if(show_ship):
+						shoot_now = True
+					else:
+						panNow = not panNow
+				if event.key == 119:
+					ship_yv1 = 2
+				if event.key == 115:
+					ship_yv2 = 2
+				if event.key == 100:
+					ship_xv1 = 2
+				if event.key == 97:
+					ship_xv2 = 2
+				if event.key == 105:
+					show_ship = not show_ship
+					print "Ship:", show_ship
+				#48-57 are the numbers
+				if event.key >= 48 and event.key <= 57:
+					ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
 			if event.type == KEYUP:
 				print event.key
 				if event.key == K_ESCAPE:
 					done = True
 				if event.key == K_SPACE:
-					#MainCL.reseed()
-					panNow = not panNow
+					shoot_now = False
 				if event.key == 116:
 					seed_bitmap_image = MainCL.gui_seedimage()
-				if event.key == 119:
+				if event.key == 112:
 					MainCL.reseed_zero()
 					#Get Int
 					#seed_strength = 256
@@ -506,15 +624,35 @@ if __name__ == "__main__":
 					else:
 						bitmap_render = 1
 						print "Recording ON"
+				if event.key == 102:
+					use_filter = not use_filter
+				if event.key == 119:
+					ship_yv1 = 0
+				if event.key == 115:
+					ship_yv2 = 0
+				if event.key == 100:
+					ship_xv1 = 0
+				if event.key == 97:
+					ship_xv2 = 0
 			if event.type == 5:
 				if event.button == 4: #scrollup'
-					myOrtho += -0.05 #zooom in
+					if panNow:
+						myOrtho += -0.05 #zooom in
+					else:
+						brush_size += 1
 				if event.button == 5: #scrolldown
-					myOrtho += 0.05 #zooom out
+					if panNow:
+						myOrtho += 0.05 #zooom out
+					else:
+						if brush_size > 0:
+							brush_size -= 1
 				if event.button == 1: #Left Click
 					#panNow = not panNow
-					drawNow = True
-					MainCL.getData()
+					if(show_ship):
+						shoot_now = True
+					else:
+						drawNow = True
+					#MainCL.getData()
 				if event.button == 3: #Right Click
 					paused = not paused
 					#panNow = not panNow
@@ -528,21 +666,20 @@ if __name__ == "__main__":
 			if event.type == 6:
 				if event.button == 1: #Release left
 					drawNow = False
-					flipDrawNow = False
-					MainCL.initBuffers()
+					#flipDrawNow = False
+					#MainCL.initBuffers()
 					#lastMousePos = pygame.mouse.get_pos()
 					#print "snap:", lastMousePos
 					#panNow = not panNow
 				#print event.button
 
 		if drawNow and not panNow:
-			brush_size = 7
 			mx = (float(pygmouse[1]) / GLR.SCREEN_SIZE[0])*(2**res_expo) - brush_size/2
 			my = (float(pygmouse[0]) / GLR.SCREEN_SIZE[1])*(2**res_expo) - brush_size/2
-			MainCL.place_square(int(mx),int(my),brush_size)
-			flipDrawNow = not flipDrawNow
-			if not paused and drawNow == flipDrawNow:
-				MainCL.initBuffers()
+			MainCL.place_square_GPU(np.int32(my), np.int32(mx), np.int32(brush_size))
+			#flipDrawNow = not flipDrawNow
+			#if not paused and drawNow == flipDrawNow:
+			#	MainCL.initBuffers()
 				
 		
 
@@ -556,15 +693,66 @@ if __name__ == "__main__":
 		# Begin main program loop	
 		#-----
 		if not paused:
+			"""bullet_x = 0
+			bullet_y = 0
+			bullet_life = 64
+			bullet_speed = 1
+			bullet_size = 5"""
+
+			if(show_ship and use_filter):
+				ship_x += ship_xv1;
+				ship_y -= ship_yv1;
+				ship_x -= ship_xv2;
+				ship_y += ship_yv2;
+				if(shoot_now and bullet_life == 0):
+					bullet_x = ship_x
+					bullet_y = ship_y
+					bullet_life = 48
+					bullet_size = 2
+					shoot_now = False
+					mx = ((float(pygmouse[0]) / GLR.SCREEN_SIZE[0])*(2**res_expo)) - (ship_size/2)
+					my = ((float(pygmouse[1]) / GLR.SCREEN_SIZE[0])*(2**res_expo)) - (ship_size/2)
+					bullet_xv = (ship_x - mx) / (bullet_life)
+					bullet_yv = (ship_y - my) / (bullet_life)
+				if(bullet_life > 0):
+					bullet_life -= 1 
+					if(bullet_life == 0):
+						bullet_size = 24
+					bullet_x -= bullet_xv
+					bullet_y -= bullet_yv
+					MainCL.place_square_GPU(np.int32(bullet_x+((ship_size/2)-(bullet_size/2))), np.int32(bullet_y+((ship_size/2)-(bullet_size/2))), np.int32(bullet_size))
+					MainCL.place_square_filter_GPU(np.int32(bullet_x+((ship_size/2)-(bullet_size/2))), np.int32(bullet_y+((ship_size/2)-(bullet_size/2))), np.int32(bullet_size))
+
+				MainCL.place_square_filter_GPU(np.int32(ship_x), np.int32(ship_y), np.int32(ship_size))
+				#MainCL.getGameState()
+				#MainCL.gameAr
+
 			i += 1
 			#Run the CL
 			MainCL.execute()
-		
+
+			######Build Every sub-frame
+			if use_filter and not show_ship:
+				MainCL.build_render()
+
+			if use_filter and show_ship:
+				MainCL.build_render_no_blur()
+
 			#for every rendered CL frame
 			if i % renderEvery == 0:
-				MainCL.getData()
-				#Bottleneck, get the data from CL
+
+				#Bottleneck, get the data from CL-GL sharing
+				if not use_filter:
+					MainCL.getData()
 				
+				
+				###### Build on actual renders
+				#MainCL.build_render()
+
+				######Use Filters
+				if use_filter:
+					MainCL.getRenderData()
+
 				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0))
 				#GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255-(MainCL.a*200)/CLMAXVAL, 0))
 
@@ -574,7 +762,7 @@ if __name__ == "__main__":
 			
 				#Print out bitmap image
 				if bitmap_render == 1:
-					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL, 3)
+					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL, 5)
 					#Count the renders
 					renderNum += 1
 				
