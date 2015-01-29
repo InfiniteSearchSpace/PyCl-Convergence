@@ -162,6 +162,7 @@ class CL:
 		#-------------------------------------------
 		self.a = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
 		self.gameAr = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
+		#self.offset = 0
 
 	#Create the cl buffers
 	def initBuffers(self):
@@ -176,11 +177,12 @@ class CL:
 	#Run Kernel, swapping/transitioning cell states between buffer a & b
 	def execute(self):
 		if self.tickState == False:
-			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.b_buf)
+			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.b_buf) # np.int32(self.offset),
 		else:
 			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.a_buf)
 		
 		self.tickState = not self.tickState
+		#self.offset += 512
 
 
 	#Build Render-layered frame
@@ -258,6 +260,9 @@ class CL:
 	def render(self):
 		print self.a
 
+	def saveSeedImage(self):
+		sp.misc.imsave('SeedImage.bmp', sp.ndimage.zoom(np.where(MainCL.a!=0, 255, 0), 1, order=0))
+
 	#Write Bitmap File Render
 	def bitRender(self, rn, zoom, CLMAXVAL, colour_mode):
 		name = "Out/"+"image" + str(rn)
@@ -325,6 +330,7 @@ class CL:
 		MainCL.kAutomata = MainCL.loadProgram(ruleFName)
 		print "  > Done!"
 		MainCL.initBuffers()
+		#self.offset = 2**22
 
 	#Reload kernel and return empty world
 	def reseed_zero(self):
@@ -549,18 +555,24 @@ if __name__ == "__main__":
 
 	brush_size = 17
 
-	use_filter = True
+	use_filter = False
 
-	show_ship = True	
+	show_ship = False	
 	shoot_now = False
 
 	bullet_x = 0
 	bullet_y = 0
 	bullet_life = 0
-	bullet_speed = 0
 	bullet_xv = 0
 	bullet_yv = 0
-	bullet_size = 0
+
+	bullet_life_max = 24
+	bullet_size = 2
+	bullet_explosion = 24
+
+	bulletStatsAr = [bullet_life_max,bullet_size,bullet_explosion]
+
+	ship_scroll_weapon = 0
 
 	ship_size = 12
 	ship_x = (2**res_expo)/2
@@ -597,6 +609,14 @@ if __name__ == "__main__":
 				if event.key == 105:
 					show_ship = not show_ship
 					print "Ship:", show_ship
+				if event.key == 264:
+					ship_scroll_weapon = 0
+				if event.key == 260:
+					ship_scroll_weapon = 1
+				if event.key == 262:
+					ship_scroll_weapon = 2
+				if event.key == 117:
+					MainCL.saveSeedImage()
 				#48-57 are the numbers
 				if event.key >= 48 and event.key <= 57:
 					ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
@@ -636,16 +656,24 @@ if __name__ == "__main__":
 					ship_xv2 = 0
 			if event.type == 5:
 				if event.button == 4: #scrollup'
-					if panNow:
-						myOrtho += -0.05 #zooom in
+					if(show_ship and use_filter):
+						if(bulletStatsAr[ship_scroll_weapon] < 256):
+							bulletStatsAr[ship_scroll_weapon] += 1
 					else:
-						brush_size += 1
+						if panNow:
+							myOrtho += -0.05 #zooom in
+						else:
+							brush_size += 1
 				if event.button == 5: #scrolldown
-					if panNow:
-						myOrtho += 0.05 #zooom out
+					if(show_ship and use_filter):
+						if(bulletStatsAr[ship_scroll_weapon] > 0):
+							bulletStatsAr[ship_scroll_weapon] -= 1
 					else:
-						if brush_size > 0:
-							brush_size -= 1
+						if panNow:
+							myOrtho += 0.05 #zooom out
+						else:
+							if brush_size > 0:
+								brush_size -= 1
 				if event.button == 1: #Left Click
 					#panNow = not panNow
 					if(show_ship):
@@ -671,6 +699,7 @@ if __name__ == "__main__":
 					#lastMousePos = pygame.mouse.get_pos()
 					#print "snap:", lastMousePos
 					#panNow = not panNow
+					shoot_now = False
 				#print event.button
 
 		if drawNow and not panNow:
@@ -707,17 +736,22 @@ if __name__ == "__main__":
 				if(shoot_now and bullet_life == 0):
 					bullet_x = ship_x
 					bullet_y = ship_y
-					bullet_life = 48
-					bullet_size = 2
-					shoot_now = False
+					bullet_life = bulletStatsAr[0] + 11
+					bullet_size = bulletStatsAr[1]
+					bullet_explosion = bullet_size+bulletStatsAr[2]
+					bullet_exp_timer = bullet_life
+					#shoot_now = False
+
 					mx = ((float(pygmouse[0]) / GLR.SCREEN_SIZE[0])*(2**res_expo)) - (ship_size/2)
 					my = ((float(pygmouse[1]) / GLR.SCREEN_SIZE[0])*(2**res_expo)) - (ship_size/2)
 					bullet_xv = (ship_x - mx) / (bullet_life)
 					bullet_yv = (ship_y - my) / (bullet_life)
 				if(bullet_life > 0):
 					bullet_life -= 1 
-					if(bullet_life == 0):
-						bullet_size = 24
+					if(bullet_life % bullet_exp_timer == 0):
+						bullet_size = bullet_explosion
+					else:
+						bullet_size = bulletStatsAr[1]
 					bullet_x -= bullet_xv
 					bullet_y -= bullet_yv
 					MainCL.place_square_GPU(np.int32(bullet_x+((ship_size/2)-(bullet_size/2))), np.int32(bullet_y+((ship_size/2)-(bullet_size/2))), np.int32(bullet_size))

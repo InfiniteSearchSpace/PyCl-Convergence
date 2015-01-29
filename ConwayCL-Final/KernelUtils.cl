@@ -36,8 +36,8 @@ __kernel void AddToBuffer(const int ySize, __global int* a, __global int* dest)
 	//if(a[my_id] != 0) {dest[my_id] = a[my_id]*8;}
 
 	//if(dest[my_id] > 767) {dest[my_id] = 0;}
+	if(dest[my_id] > 0) {dest[my_id] += 5;}
 	if(dest[my_id] > 1278) {dest[my_id] = 0;}
-	if(dest[my_id] > 0) {dest[my_id] += 1;}
 	if(a[my_id] != 0) {dest[my_id] = a[my_id];}
 	
 
@@ -49,7 +49,7 @@ __kernel void ReplaceBuffer(const int ySize, __global int* a, __global int* dest
 	unsigned int j = get_global_id(1);
 	unsigned int my_id = i + ySize*j;
 
-	if(dest[my_id] > 7) {dest[my_id] = 0;}
+	if(dest[my_id] > 23) {dest[my_id] = 0;}
 	if(dest[my_id] > 0) {dest[my_id] += 1;}
 	if(a[my_id] != 0) {dest[my_id] = a[my_id];}
 
