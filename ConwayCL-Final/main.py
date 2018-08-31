@@ -148,11 +148,8 @@ class CL:
 
 	#Load last configuration
 	def loadConfig(self, filename):
-		#read
 		f = open(filename, 'r')
-		fstr = "".join(f.readlines())
-		return fstr
-
+		return [line.strip() for line in f.readlines()]
 
 	#initialize host side (CPU) arrays
 	def initHostArrays(self, res_expo):
@@ -420,23 +417,23 @@ if __name__ == "__main__":
 	MainCL.configUI((64,64,64))
 
 	last_config = MainCL.loadConfig("Last_Config")
-	playlist = MainCL.loadConfig("RulePlaylist")
-	vetoConfig = False
+	playlist    = MainCL.loadConfig("RulePlaylist")
+	vetoConfig  = False
 
-	list = [item for item in last_config.split(',') if item.strip()]
-	rule_playlist_ar = [item for item in playlist.split(',') if item.strip()]
+	# list = [item for item in last_config.split(',') if item.strip()]
+	# rule_playlist_ar = [item for item in playlist.split(',') if item.strip()]
 
 	#replay last config?
 	uinput = raw_input("  > Replay last custom configuration? (Y/N): ")
 	if uinput != "" and uinput != "n" and uinput != "N":
 		#Overrite the defaults
-		res_expo = 				int(list[0])
-		ruleFName = 			list[1]
-		seed_bitmap_image = 	list[2]
-		seed_strength = 		int(list[3])
-		renderEvery = 			int(list[4])
-		image_magnification = 	int(list[5])
-		bitmap_render = 		int(list[6])
+		res_expo            = int(last_config[0])
+		ruleFName           = last_config[1]
+		seed_bitmap_image   = last_config[2]
+		seed_strength       = int(last_config[3])
+		renderEvery         = int(last_config[4])
+		image_magnification = int(last_config[5])
+		bitmap_render       = int(last_config[6])
 
 		vetoConfig = True
 
@@ -597,15 +594,15 @@ if __name__ == "__main__":
 						shoot_now = True
 					else:
 						panNow = not panNow
-				if event.key == 119:
+				if event.key == 119: # w
 					ship_yv1 = 2
-				if event.key == 115:
-					ship_yv2 = 2
-				if event.key == 100:
-					ship_xv1 = 2
-				if event.key == 97:
+				if event.key == 97:  # a
 					ship_xv2 = 2
-				if event.key == 105:
+				if event.key == 115: # s
+					ship_yv2 = 2
+				if event.key == 100: # d
+					ship_xv1 = 2
+				if event.key == 105: # i
 					show_ship = not show_ship
 					print "Ship:", show_ship
 				if event.key == 264:
@@ -614,20 +611,19 @@ if __name__ == "__main__":
 					ship_scroll_weapon = 1
 				if event.key == 262:
 					ship_scroll_weapon = 2
-				if event.key == 117:
+				if event.key == 117: # u
 					MainCL.saveSeedImage()
-				#48-57 are the numbers
-				if event.key >= 48 and event.key <= 57:
-					try:
-						fn = rule_playlist_ar[event.key-48]
-						print
+				if event.key >= 48 and event.key <= 57: # the number keys (0 through 9)
+					index = (event.key - 49) % 10 # circularly rotate the indexes left by 1, causing the "1" keypress to be the first index and "0" to be the last index (just like the keyboard!)
+					if index >= len(playlist):
+						print "no playlist entry"
+					else:
+						fn = playlist[index]
 						print fn
 						if os.path.exists(fn):
-							ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
+							ruleFName = MainCL.setKernel(fn)
 						else:
-							print "  |_ file not found"
-					except IndexError:
-						print "no playlist entry"
+							print "    file not found"
 			if event.type == KEYUP:
 				print event.key
 				if event.key == K_ESCAPE:

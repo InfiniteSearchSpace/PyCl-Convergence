@@ -1,1 +1,9 @@
-./RuleKernels/Count/MooreWire-2.cl,./RuleKernels/Count/Multiple Attractors/EW-FMA7-16.cl,./RuleKernels/Count/Multiple Attractors/EW-FMA7-2.cl,./RuleKernels/Count/MeltingHills.cl,./RuleKernels/Count/Multiple Attractors/MiniAtom-2.cl,./RuleKernels/Count/Multiple Attractors/Feeders-14.cl,./RuleKernels/Count/Atoms/SmallAtom/AtomSmall-2.cl,./RuleKernels/Count/Atoms/Atom-ThreeRings-1.cl,./RuleKernels/Count/Honeycomb/Honeycomb-4.cl,./RuleKernels/Count/WG-NoMod.cl,
+./RuleKernels/Count/MooreWire-2.cl
+./RuleKernels/Count/Multiple Attractors/EW-FMA7-4/EF74-1.cl
+./RuleKernels/Count/MeltingHills.cl
+./RuleKernels/Count/Multiple Attractors/MiniAtom-2.cl
+./RuleKernels/Count/Multiple Attractors/Feeders-14.cl
+./RuleKernels/Count/Atoms/SmallAtom/AtomSmall-2.cl
+./RuleKernels/Count/Atoms/Atom-ThreeRings-1.cl
+./RuleKernels/Count/Honeycomb/Honeycomb-4.cl
+./RuleKernels/Count/WG-NoMod.cl
