@@ -1,0 +1,14 @@
+# resolution exponent (2^exp)
+10
+# initial rule
+RuleKernels/Count/Multiple Attractors/MiniAtom/MiniAtom-19.cl
+# seed bitmap
+null
+# seed strength
+2
+# render every 'n' steps
+1
+# magnification
+2
+# bitmap render
+0

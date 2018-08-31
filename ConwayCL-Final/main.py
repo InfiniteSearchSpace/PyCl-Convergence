@@ -149,7 +149,7 @@ class CL:
 	#Load last configuration
 	def loadConfig(self, filename):
 		f = open(filename, 'r')
-		return [line.strip() for line in f.readlines()]
+		return [ line.strip() for line in f.readlines() if line.strip() and not line[0] == "#" ]
 
 	#initialize host side (CPU) arrays
 	def initHostArrays(self, res_expo):
@@ -416,24 +416,21 @@ if __name__ == "__main__":
 
 	MainCL.configUI((64,64,64))
 
-	last_config = MainCL.loadConfig("Last_Config")
-	playlist    = MainCL.loadConfig("RulePlaylist")
-	vetoConfig  = False
-
-	# list = [item for item in last_config.split(',') if item.strip()]
-	# rule_playlist_ar = [item for item in playlist.split(',') if item.strip()]
+	config     = MainCL.loadConfig("SavedConfig")
+	playlist   = MainCL.loadConfig("RulePlaylist")
+	vetoConfig = False
 
 	#replay last config?
-	uinput = raw_input("  > Replay last custom configuration? (Y/N): ")
+	uinput = raw_input("  > Use saved configuration? (Y/N): ")
 	if uinput != "" and uinput != "n" and uinput != "N":
-		#Overrite the defaults
-		res_expo            = int(last_config[0])
-		ruleFName           = last_config[1]
-		seed_bitmap_image   = last_config[2]
-		seed_strength       = int(last_config[3])
-		renderEvery         = int(last_config[4])
-		image_magnification = int(last_config[5])
-		bitmap_render       = int(last_config[6])
+		# Override the defaults
+		res_expo            = int(config[0])
+		ruleFName           = config[1]
+		seed_bitmap_image   = config[2]
+		seed_strength       = int(config[3])
+		renderEvery         = int(config[4])
+		image_magnification = int(config[5])
+		bitmap_render       = int(config[6])
 
 		vetoConfig = True
 
@@ -501,7 +498,7 @@ if __name__ == "__main__":
 				sOut += str(bitmap_render)
 
 				#Write file
-				config_file = open("Last_Config", "w")
+				config_file = open("SavedConfig", "w")
 				config_file.write(sOut)
 				config_file.close()
 
