@@ -3,7 +3,6 @@ import numpy as np
 import scipy as sp
 from scipy import misc
 from scipy import ndimage
-from scipy.misc import lena
 import random as r
 import datetime as date
 import time
@@ -619,7 +618,16 @@ if __name__ == "__main__":
 					MainCL.saveSeedImage()
 				#48-57 are the numbers
 				if event.key >= 48 and event.key <= 57:
-					ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
+					try:
+						fn = rule_playlist_ar[event.key-48]
+						print
+						print fn
+						if os.path.exists(fn):
+							ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
+						else:
+							print "  |_ file not found"
+					except IndexError:
+						print "no playlist entry"
 			if event.type == KEYUP:
 				print event.key
 				if event.key == K_ESCAPE:
