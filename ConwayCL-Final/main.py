@@ -498,17 +498,19 @@ if __name__ == "__main__":
 			if uinput != "" and uinput != "n" and uinput != "N":
 
 				#Save presets
-				sOut = str(res_expo) + ","
-				sOut += ruleFName + ","
-				sOut += seed_bitmap_image + ","
-				sOut += str(seed_strength) + ","
-				sOut += str(renderEvery) + ","
-				sOut += str(image_magnification) + ","
-				sOut += str(bitmap_render)
+				sOut = [
+					str(res_expo),
+					ruleFName,
+					seed_bitmap_image,
+					str(seed_strength),
+					str(renderEvery),
+					str(image_magnification),
+					str(bitmap_render)
+				]
 
 				#Write file
 				config_file = open("SavedConfig", "w")
-				config_file.write(sOut)
+				config_file.write("\n".join(sOut) + "\n")
 				config_file.close()
 
 
