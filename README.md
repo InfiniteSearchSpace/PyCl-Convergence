@@ -45,9 +45,9 @@ If your machine can run GPU-accelerated simulations with https://code.google.com
 
 # Once that is set up...
 
-Open the terminal in './PyCl-Convergence-master/ConwayCL-Final'
+Open the terminal in './PyCl-Convergence/ConwayCL-Final'
 
-Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the terminal with: 'python main.py'
+Run the Python script './PyCl-Convergence/ConwayCL-Final/main.py' in the terminal with: 'python main.py'
 
  * Spam the ENTER key to use default settings
 
@@ -92,13 +92,3 @@ GAME (Temporarily Default Override)
  * Spacebar or Left Click to shoot at the Mouse Position
 
  * 'F' to toggle use of 'Photographic' filter
-
-
-
-
-
-
-
-
-
-
