@@ -132,9 +132,18 @@ class RenderGL:
 
 class CL:
 	def __init__(self):
-		self.ctx = cl.create_some_context()
+		self.ctx = self.create_context()
 		self.queue = cl.CommandQueue(self.ctx)
 		self.tickState = False
+
+	# If there's only one platform and one device, use it; otherwise, call "create_some_context"
+	def create_context(self):
+		platforms = cl.get_platforms()
+		if len(platforms) == 1:
+			devices = platforms[0].get_devices()
+			if len(devices) == 1:
+				return cl.Context(devices)
+		return cl.create_some_context()
 
 	#Load kernel file and load as internal program
 	def loadProgram(self, filename):
