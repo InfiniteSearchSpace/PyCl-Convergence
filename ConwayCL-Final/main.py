@@ -3,10 +3,9 @@ import numpy as np
 import scipy as sp
 from scipy import misc
 from scipy import ndimage
-from scipy.misc import lena
 import random as r
 import datetime as date
-import time 
+import time
 from PIL import Image
 import os
 import tkFileDialog as tfd
@@ -30,21 +29,21 @@ class RenderGL:
 		#Set the initial size for the generative/host array
 		self.grid_w = self.arraySize[0]
 		self.grid_h = self.arraySize[1]
-		
+
 		#initialise both buffer to 0 in x,y
 		self.current_grid = np.where(myCL.a!=0, 255, 0)
 
 	def initTexture(self):
 
 		#data = np.flipud(lena()) #insert test data
-		
+
 		#Set the data source
 		data = self.current_grid
 		w,h = data.shape
 
 		# generate a texture id
 		self.mytexture = gl.glGenTextures(1)
-		
+
 		#bind? the tex id and some implicit thing?
 		#2D causes epic memory leaks
 		gl.glBindTexture(gl.GL_TEXTURE_3D,self.mytexture)
@@ -73,7 +72,7 @@ class RenderGL:
 		#Perspectives/layouts
 		#L,R,B,T,?,?
 		#gl.glOrtho(-0.1, 1.1,	-0.1, 1.1,	 0,1)
-				
+
 		"""offset = 0.5
 		x1 = offset+1
 		x2 = (x1 - 1) *-1
@@ -91,7 +90,7 @@ class RenderGL:
 
 	def changeOrtho(self, offset):
 		x1 = offset+1
-		x2 = (x1 - 1) *-1 
+		x2 = (x1 - 1) *-1
 		y1 = offset+1
 		y2 = (x1 - 1) *-1
 
@@ -120,7 +119,7 @@ class RenderGL:
 		GLR.initStage(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1])
 		GLR.changeOrtho(myOrtho)
 		GLR.initTexture()
-		
+
 		offs = GLR.calcOffsets( GLR.SCREEN_SIZE[0], GLR.SCREEN_SIZE[1], pmouse, last_pm)
 
 		GLR.doDraw(GLR.SCREEN_SIZE[0],GLR.SCREEN_SIZE[1], offs[0], offs[1])
@@ -133,9 +132,18 @@ class RenderGL:
 
 class CL:
 	def __init__(self):
-		self.ctx = cl.create_some_context()
+		self.ctx = self.create_context()
 		self.queue = cl.CommandQueue(self.ctx)
 		self.tickState = False
+
+	# If there's only one platform and one device, use it; otherwise, call "create_some_context"
+	def create_context(self):
+		platforms = cl.get_platforms()
+		if len(platforms) == 1:
+			devices = platforms[0].get_devices()
+			if len(devices) == 1:
+				return cl.Context(devices)
+		return cl.create_some_context()
 
 	#Load kernel file and load as internal program
 	def loadProgram(self, filename):
@@ -149,11 +157,8 @@ class CL:
 
 	#Load last configuration
 	def loadConfig(self, filename):
-		#read
 		f = open(filename, 'r')
-		fstr = "".join(f.readlines())
-		return fstr
-
+		return [ line.strip() for line in f.readlines() if line.strip() and not line[0] == "#" ]
 
 	#initialize host side (CPU) arrays
 	def initHostArrays(self, res_expo):
@@ -180,7 +185,7 @@ class CL:
 			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.b_buf) # np.int32(self.offset),
 		else:
 			self.kAutomata.RunAutomata(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.a_buf)
-		
+
 		self.tickState = not self.tickState
 		#self.offset += 512
 
@@ -189,19 +194,19 @@ class CL:
 	def build_render(self):
 		if self.tickState == False:
 			self.kUtil.AddToBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf)
-			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)		
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)
 		else:
 			self.kUtil.AddToBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf)
-			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)	
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)
 
 	#Build Render-layered frame
 	def build_render_no_blur(self):
 		if self.tickState == False:
 			self.kUtil.ReplaceBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf)
-			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)		
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.a_buf, self.render_buf, self.render_buf)
 		else:
 			self.kUtil.ReplaceBuffer(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf)
-			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)	
+			self.kUtil.BuildFrame(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.render_buf, self.render_buf)
 
 
 	#Read from GPU buffer to host's array (self.a)
@@ -212,7 +217,7 @@ class CL:
 		else:
 			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.b_buf, self.dest_buf)
 			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.a).wait()
-			
+
 
 	#Read from GPU buffer to host's array (self.a)
 	def getRenderData(self):
@@ -223,7 +228,7 @@ class CL:
 	def getGameState(self):
 			self.kUtil.GetWorld(self.queue, self.a.shape, None, self.ar_ySize, self.render_buf, self.dest_buf)
 			cl.enqueue_read_buffer(self.queue, self.dest_buf, self.gameAr).wait()
-		
+
 
 	#Seed, fill buffer
 	def seed(self, seedRand):
@@ -238,7 +243,7 @@ class CL:
 	#Return 0s array
 	def zeroWorld(self):
 		self.a = np.zeros((self.ar_ySize,self.ar_ySize), dtype=np.int32)
-		
+
 
 	#User Input - Place Square
 	def place_square(self,x,y,size):
@@ -319,7 +324,7 @@ class CL:
 			RGB_array[:,:,2] = np.where(MainCL.a == 1, 255, np.where(MainCL.a != 0, np.where(MainCL.a<128, (MainCL.a*255)/128, np.where(MainCL.a<256,255-((MainCL.a/3)%256),0)), 0))
 
 		sp.misc.imsave(name + '.bmp', sp.ndimage.zoom(RGB_array, (zoom,zoom,1), order=0))
-	
+
 	#Reload kernel and reseed world
 	def reseed(self):
 		if seed_bitmap_image != "null":
@@ -374,7 +379,7 @@ class CL:
 			self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.a_buf)
 		else:
 			self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.b_buf)
-		
+
 	def place_square_filter_GPU(self,x,y,size):
 		self.kUtil.PlaceBlock(self.queue, self.a.shape, None, self.ar_ySize, x, y, size, self.render_buf)
 
@@ -401,11 +406,11 @@ if __name__ == "__main__":
 	#For hiding unused GUI
 	fauxgui = Tk()
 	fauxgui.withdraw()
-	
-	
+
+
 	#--- Preset Configuration -------------
 
-	res_expo = 10	
+	res_expo = 10
 	seed_strength = 3
 	renderEvery = 1
 	image_magnification = 1
@@ -420,28 +425,25 @@ if __name__ == "__main__":
 
 	MainCL.configUI((64,64,64))
 
-	last_config = MainCL.loadConfig("Last_Config")
-	playlist = MainCL.loadConfig("RulePlaylist")
+	config     = MainCL.loadConfig("SavedConfig")
+	playlist   = MainCL.loadConfig("RulePlaylist")
 	vetoConfig = False
 
-	list = [item for item in last_config.split(',') if item.strip()]
-	rule_playlist_ar = [item for item in playlist.split(',') if item.strip()]
-	
 	#replay last config?
-	uinput = raw_input("  > Replay last custom configuration? (Y/N): ")
+	uinput = raw_input("  > Use saved configuration? (Y/N): ")
 	if uinput != "" and uinput != "n" and uinput != "N":
-		#Overrite the defaults
-		res_expo = 				int(list[0])
-		ruleFName = 			list[1]
-		seed_bitmap_image = 	list[2]
-		seed_strength = 		int(list[3])
-		renderEvery = 			int(list[4])
-		image_magnification = 	int(list[5])
-		bitmap_render = 		int(list[6])
-		
+		# Override the defaults
+		res_expo            = int(config[0])
+		ruleFName           = config[1]
+		seed_bitmap_image   = config[2]
+		seed_strength       = int(config[3])
+		renderEvery         = int(config[4])
+		image_magnification = int(config[5])
+		bitmap_render       = int(config[6])
+
 		vetoConfig = True
 
-	
+
 	if(not vetoConfig):
 		uinput = raw_input("  > (Int) [2 ^ " + str(res_expo) + " = " + str(2**res_expo) + "] Resolution: 2 to the power of: ")
 		if uinput != "":
@@ -464,7 +466,7 @@ if __name__ == "__main__":
 	print "  > Done!"
 
 	if(not vetoConfig):
-			
+
 		usePreset = raw_input("  > Use preset configuration? (Y/N): ")
 		if usePreset == "N" or usePreset == "n":
 			#Query user about seeding the initial cell configurations
@@ -472,10 +474,10 @@ if __name__ == "__main__":
 			if SeedType != "" and SeedType != "n" and SeedType != "N":
 				#Seed from image
 				seed_bitmap_image = tfd.askopenfilename(initialdir="./SeedImages", title="Select Seeding-Image File (*.bmp)")
-				MainCL.loadImg(seed_bitmap_image) 
+				MainCL.loadImg(seed_bitmap_image)
 			else:
 				#Seed Strength
-				uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ") 
+				uinput = raw_input("  > (Int) [" + str(seed_strength) + "] Enter random seed strength (1/x): ")
 				if uinput != "":
 					seed_strength = int(uinput)
 
@@ -487,7 +489,7 @@ if __name__ == "__main__":
 			uinput = raw_input("  > Render as bitmap files? (Y/N): ")
 			if uinput != "" and uinput != "n" and uinput != "N":
 				bitmap_render = 1
-			
+
 			uinput = raw_input("  > (Int) [" + str(image_magnification) + "] Magnify rendered bitmap pixels by: ")
 			if uinput != "":
 				image_magnification = int(uinput)
@@ -496,22 +498,24 @@ if __name__ == "__main__":
 			if uinput != "" and uinput != "n" and uinput != "N":
 
 				#Save presets
-				sOut = str(res_expo) + ","
-				sOut += ruleFName + "," 
-				sOut += seed_bitmap_image + "," 
-				sOut += str(seed_strength) + "," 
-				sOut += str(renderEvery) + "," 
-				sOut += str(image_magnification) + "," 
-				sOut += str(bitmap_render)
-				
+				sOut = [
+					str(res_expo),
+					ruleFName,
+					seed_bitmap_image,
+					str(seed_strength),
+					str(renderEvery),
+					str(image_magnification),
+					str(bitmap_render)
+				]
+
 				#Write file
-				config_file = open("Last_Config", "w")
-				config_file.write(sOut)
+				config_file = open("SavedConfig", "w")
+				config_file.write("\n".join(sOut) + "\n")
 				config_file.close()
-				
-			
+
+
 	if vetoConfig and seed_bitmap_image != "null":
-		MainCL.loadImg(seed_bitmap_image) 
+		MainCL.loadImg(seed_bitmap_image)
 	else :
 		#Randomly seed host array
 		MainCL.seed(seed_strength)
@@ -522,7 +526,7 @@ if __name__ == "__main__":
 
 
 	#-----
-	# Begin main program loop	
+	# Begin main program loop
 	#-----
 
 	print "  > Begin OpenGL render"
@@ -530,7 +534,7 @@ if __name__ == "__main__":
 	GLR = RenderGL(MainCL, SCR_DIMS)
 	pygame.init()
 	screen = pygame.display.set_mode(GLR.SCREEN_SIZE, HWSURFACE|OPENGL|DOUBLEBUF)
-	clock = pygame.time.Clock()    
+	clock = pygame.time.Clock()
 	done = False
 
 	#Set & render the initial stage
@@ -557,7 +561,7 @@ if __name__ == "__main__":
 
 	use_filter = False
 
-	show_ship = False	
+	show_ship = False
 	shoot_now = False
 
 	bullet_x = 0
@@ -583,7 +587,7 @@ if __name__ == "__main__":
 	ship_yv2 = 0
 
 	while done==False:
-		
+
 		pygmouse = pygame.mouse.get_pos()
 
 		#Pygame Event Handler
@@ -598,15 +602,15 @@ if __name__ == "__main__":
 						shoot_now = True
 					else:
 						panNow = not panNow
-				if event.key == 119:
+				if event.key == 119: # w
 					ship_yv1 = 2
-				if event.key == 115:
-					ship_yv2 = 2
-				if event.key == 100:
-					ship_xv1 = 2
-				if event.key == 97:
+				if event.key == 97:  # a
 					ship_xv2 = 2
-				if event.key == 105:
+				if event.key == 115: # s
+					ship_yv2 = 2
+				if event.key == 100: # d
+					ship_xv1 = 2
+				if event.key == 105: # i
 					show_ship = not show_ship
 					print "Ship:", show_ship
 				if event.key == 264:
@@ -615,11 +619,19 @@ if __name__ == "__main__":
 					ship_scroll_weapon = 1
 				if event.key == 262:
 					ship_scroll_weapon = 2
-				if event.key == 117:
+				if event.key == 117: # u
 					MainCL.saveSeedImage()
-				#48-57 are the numbers
-				if event.key >= 48 and event.key <= 57:
-					ruleFName = MainCL.setKernel(rule_playlist_ar[event.key-48])
+				if event.key >= 48 and event.key <= 57: # the number keys (0 through 9)
+					index = (event.key - 49) % 10 # circularly rotate the indexes left by 1, causing the "1" keypress to be the first index and "0" to be the last index (just like the keyboard!)
+					if index >= len(playlist):
+						print "no playlist entry"
+					else:
+						fn = playlist[index]
+						print fn
+						if os.path.exists(fn):
+							ruleFName = MainCL.setKernel(fn)
+						else:
+							print "    file not found"
 			if event.type == KEYUP:
 				print event.key
 				if event.key == K_ESCAPE:
@@ -709,8 +721,8 @@ if __name__ == "__main__":
 			#flipDrawNow = not flipDrawNow
 			#if not paused and drawNow == flipDrawNow:
 			#	MainCL.initBuffers()
-				
-		
+
+
 
 		#Min, max zoom corrector
 		if myOrtho > 2:
@@ -719,7 +731,7 @@ if __name__ == "__main__":
 			myOrtho = -0.49 #In
 
 		#-----
-		# Begin main program loop	
+		# Begin main program loop
 		#-----
 		if not paused:
 			"""bullet_x = 0
@@ -747,7 +759,7 @@ if __name__ == "__main__":
 					bullet_xv = (ship_x - mx) / (bullet_life)
 					bullet_yv = (ship_y - my) / (bullet_life)
 				if(bullet_life > 0):
-					bullet_life -= 1 
+					bullet_life -= 1
 					if(bullet_life % bullet_exp_timer == 0):
 						bullet_size = bullet_explosion
 					else:
@@ -778,8 +790,8 @@ if __name__ == "__main__":
 				#Bottleneck, get the data from CL-GL sharing
 				if not use_filter:
 					MainCL.getData()
-				
-				
+
+
 				###### Build on actual renders
 				#MainCL.build_render()
 
@@ -790,34 +802,34 @@ if __name__ == "__main__":
 				GLR.current_grid = np.flipud(np.where(MainCL.a!=0, np.where(MainCL.a<CLMAXVAL, 255-(MainCL.a*200)/CLMAXVAL, 55), 0))
 				#GLR.current_grid = np.flipud(np.where(MainCL.a!=0, 255-(MainCL.a*200)/CLMAXVAL, 0))
 
-				
+
 
 				i = 0 #reset time
-			
+
 				#Print out bitmap image
 				if bitmap_render == 1:
 					MainCL.bitRender(renderNum, image_magnification, CLMAXVAL, 5)
 					#Count the renders
 					renderNum += 1
-				
-		
+
+
 
 		#-----
 		# End CL
 		#-----
-		
+
 		#Adjust mouse position for panning
 		if not panNow:
 			pygmouse = (0,0)
 
 
-		
+
 		#Do the OpenGL render
 		GLR.doRender(pygmouse, lastMousePos)
-		
+
 		#Refresh display
 		pygame.display.flip()
-		
-		
+
+
 
 	pygame.quit()

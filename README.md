@@ -45,9 +45,9 @@ If your machine can run GPU-accelerated simulations with https://code.google.com
 
 # Once that is set up...
 
-Open the terminal in './PyCl-Convergence-master/ConwayCL-Final'
+Open the terminal in './PyCl-Convergence/ConwayCL-Final'
 
-Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the terminal with: 'python main.py'
+Run the Python script './PyCl-Convergence/ConwayCL-Final/main.py' in the terminal with: 'python main.py'
 
  * Spam the ENTER key to use default settings
 
@@ -66,6 +66,8 @@ Run the Python script './PyCl-Convergence-master/ConwayCL-Final/Main.py' in the 
  * 'F' to toggle use of 'Photographic' filter
 
  * 'I' to toggle use of 'Game Mode' (Prerequisite: 'F' for Filter Mode must be on)
+
+ * '0' through '9' to load a rule from the 'RulePlaylist' file
 
 There's Three Modes: DRAW, VIEW, and GAME
 
@@ -90,13 +92,3 @@ GAME (Temporarily Default Override)
  * Spacebar or Left Click to shoot at the Mouse Position
 
  * 'F' to toggle use of 'Photographic' filter
-
-	
-
-
-
-
-
-
-
-
